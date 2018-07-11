@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+
+    tools:context=".saukhidangnhap">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarSaukhiDN"
+        android:background="#0091EA"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/ten_app"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:layout_below="@id/toolbarSaukhiDN"
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:tabMode="fixed"
+        app:tabGravity="fill">
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:layout_below="@id/tabLayout"
+        android:id="@+id/viewPager"
+        android:layout_above="@id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_fab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/bottomNavigationView"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        app:menu_colorNormal="@color/mauChuDao"
+        app:menu_colorPressed="@color/mauNut"
+        app:menu_colorRipple="@color/mauChuDao"
+        fab:menu_backgroundColor="#ccffffff"
+
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fab_1"
+            android:layout_height="wrap_content"
+            style="@style/MenuButtonsSmall"
+            android:src="@android:drawable/ic_input_add"
+            fab:fab_size="mini"
+            fab:fab_label="Menu item 1" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            style="@style/MenuButtonsSmall"
+            android:id="@+id/fab_2"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_add"
+            fab:fab_size="mini"
+            fab:fab_label="Menu item 2" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            style="@style/MenuButtonsSmall"
+            android:id="@+id/fab_3"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_add"
+            fab:fab_size="mini"
+            fab:fab_label="Thêm" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+        <!--android:id="@+id/bottomNavigationView"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:itemTextColor="@color/mauTrang"-->
+        <!--app:itemIconTint="@color/mauTrang"-->
+        <!--app:itemBackground="@color/mauChuDao"-->
+        <!--app:menu="@menu/item_menu_bottombar"-->
+        <!--&gt;-->
+
+
+    <!--</android.support.design.widget.BottomNavigationView>-->
+         <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+             android:id="@+id/bottomNavigationView"
+             android:layout_alignParentBottom="true"
+             android:layout_width="match_parent"
+             android:layout_height="50dp">
+
+         </com.aurelhubert.ahbottomnavigation.AHBottomNavigation>
+
+</RelativeLayout>

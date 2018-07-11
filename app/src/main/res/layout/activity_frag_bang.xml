@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragBang">
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchViewBang"
+        android:imeOptions="actionDone"
+        android:layout_width="match_parent"
+        android:background="@color/mauChuDao"
+        android:layout_height="30dp"></android.support.v7.widget.SearchView>
+    <TextView
+        android:id="@+id/txtView1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bảng cá nhân"
+        android:textSize="20dp"/>
+    <ListView
+        android:id="@+id/lstViewCaNhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/demo_array"
+        ></ListView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bảng nhóm"
+        android:textSize="20dp"/>
+    <ListView
+        android:id="@+id/lstViewNhom"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:entries="@array/demo_array"
+        ></ListView>
+
+
+
+</LinearLayout>

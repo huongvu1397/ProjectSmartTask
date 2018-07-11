@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragLich">
+
+    <com.applandeo.materialcalendarview.CalendarView
+        android:layout_width="match_parent"
+        app:type="classic"
+        app:headerColor="@color/mauChuDao"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarview"
+
+        ></com.applandeo.materialcalendarview.CalendarView>
+
+
+</LinearLayout>

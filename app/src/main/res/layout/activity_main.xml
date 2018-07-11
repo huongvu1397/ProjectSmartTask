@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/mauChuDao">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ten_app"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:textColor="@color/mauTrang"
+        android:textAllCaps="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textMain"
+        android:layout_gravity="center"
+        android:textColor="@color/mauTrang"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/mauTrang"
+        android:layout_marginTop="10dp"
+        android:text="@string/textMain2"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/logo_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:background="@color/mauNut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Ký"
+            android:textColor="@color/mauTrang"
+            android:onClick="xulydangky"
+            />
+        <Button
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+
+            android:background="@color/mauNut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng Nhập"
+            android:textColor="@color/mauTrang"
+            android:onClick="xulydangnhap"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>
