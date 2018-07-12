@@ -1,16 +1,12 @@
-package com.example.a84974.projectwooktime;
+package com.example.a84974.projectsmarttask;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.support.v4.app.Fragment;
 
 import android.view.View;
 import android.widget.Toast;
@@ -18,7 +14,7 @@ import android.widget.Toast;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
-import com.example.a84974.projectwooktime.adapter.MainPagerAdapter;
+import com.example.a84974.projectsmarttask.adapter.MainPagerAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
@@ -32,10 +28,10 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
     private FloatingActionMenu fab;
     private FloatingActionButton fab1,fab2,fab3;
     private AHBottomNavigation bottomNavigation;
-    private FragBang fragBang;
-    private fragVitri fragVitri;
-    private fragLich fragLich;
-    private fragAnh fragAnh;
+    private FragmentBang fragmentBang;
+    private FragmentVitri FragmentVitri;
+    private FragmentLich FragmentLich;
+    private FragmentAnh FragmentAnh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +43,11 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
         fab1 = findViewById(R.id.fab_1);
         fab2 = findViewById(R.id.fab_2);
         fab3 = findViewById(R.id.fab_3);
-        fragBang = new FragBang();
-        fragVitri = new fragVitri();
-        fragLich = new fragLich();
-        fragAnh = new fragAnh();
-        pagerAdapter = new MainPagerAdapter(getSupportFragmentManager(),fragBang,fragAnh,fragLich,fragVitri);
+        fragmentBang = new FragmentBang();
+        FragmentVitri = new FragmentVitri();
+        FragmentLich = new FragmentLich();
+        FragmentAnh = new FragmentAnh();
+        pagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), fragmentBang, FragmentAnh, FragmentLich, FragmentVitri);
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -64,7 +60,7 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onPageSelected(int position) {
                        if(position==3){
-                           fragVitri.init();
+                           FragmentVitri.init();
                        }
             }
 
@@ -181,7 +177,7 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.fab_3:
                 
-                startActivity(new Intent(this,taoBang.class));
+                startActivity(new Intent(this,TaoBang.class));
                 //fab.set close gi day
                 break;
         }

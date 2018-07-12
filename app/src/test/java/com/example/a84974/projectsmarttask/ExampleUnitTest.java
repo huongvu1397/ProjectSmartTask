@@ -1,4 +1,4 @@
-package com.example.a84974.projectwooktime;
+package com.example.a84974.projectsmarttask;
 
 import org.junit.Test;
 

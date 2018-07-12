@@ -1,4 +1,4 @@
-package com.example.a84974.projectwooktime;
+package com.example.a84974.projectsmarttask;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
 
-public class fragLich extends Fragment {
+public class FragmentLich extends Fragment {
     public CalendarView calendarView;
     private FloatingActionMenu menufab;
 

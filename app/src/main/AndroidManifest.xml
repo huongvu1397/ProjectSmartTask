@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.a84974.projectwooktime">
+    package="com.example.a84974.projectsmarttask">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -35,14 +35,14 @@
         </activity>
         <activity android:name=".saukhidangnhap" />
         <activity android:name=".dangnhapapp" />
-        <!-- <activity android:name=".fragAnh" /> -->
-        <!-- <activity android:name=".FragBang" /> -->
-        <!-- <activity android:name=".fragLich" /> -->
-        <!-- <activity android:name=".fragVitri"></activity> -->
-        <activity android:name=".truycapBang" />
+        <!-- <activity android:name=".FragmentAnh" /> -->
+        <!-- <activity android:name=".FragmentBang" /> -->
+        <!-- <activity android:name=".FragmentLich" /> -->
+        <!-- <activity android:name=".FragmentVitri"></activity> -->
+        <activity android:name=".Bang" />
         <activity android:name=".bottomHome" />
         <activity android:name=".thongBaobottom" />
-        <activity android:name=".taoBang"></activity>
+        <activity android:name=".TaoBang"></activity>
     </application>
 
 </manifest>

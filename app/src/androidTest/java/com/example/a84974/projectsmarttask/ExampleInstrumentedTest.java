@@ -1,4 +1,4 @@
-package com.example.a84974.projectwooktime;
+package com.example.a84974.projectsmarttask;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.example.a84974.projectwooktime;
+package com.example.a84974.projectsmarttask;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class fragAnh extends Fragment {
+public class FragmentAnh extends Fragment {
 
     @Nullable
     @Override

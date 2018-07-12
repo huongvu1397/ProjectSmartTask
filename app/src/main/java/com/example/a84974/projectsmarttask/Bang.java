@@ -1,4 +1,4 @@
-package com.example.a84974.projectwooktime;
+package com.example.a84974.projectsmarttask;
 
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class truycapBang extends AppCompatActivity {
+public class Bang extends AppCompatActivity {
     private ViewPager slideView;
     private LinearLayout mDotlayout;
     @Override
