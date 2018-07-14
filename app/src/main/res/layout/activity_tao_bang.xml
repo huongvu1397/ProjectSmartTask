@@ -63,6 +63,7 @@
             android:textSize="20dp"
             android:text="Tên"/>
         <EditText
+            android:maxLines="1"
             android:layout_width="match_parent"
             android:hint="Bảng mới"
             android:layout_height="wrap_content" />
@@ -77,10 +78,10 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:text="Quyền xem"/>
-            <EditText
+            <Spinner
+                android:id="@+id/spinnertb"
                 android:layout_width="match_parent"
-                android:hint="Bảng mới"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"></Spinner>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"

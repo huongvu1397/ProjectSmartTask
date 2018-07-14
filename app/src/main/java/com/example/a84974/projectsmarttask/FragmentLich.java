@@ -49,10 +49,6 @@ public class FragmentLich extends Fragment {
                                 + eventDay.isEnabled(),
                         Toast.LENGTH_SHORT).show());
 
-
-
-
-
         return view;
     }
 }
