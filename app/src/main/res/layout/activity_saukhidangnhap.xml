@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-
+    android:id="@+id/relacontent"
     tools:context=".saukhidangnhap">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarSaukhiDN"
@@ -26,6 +28,7 @@
         </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
+
 
     <android.support.design.widget.TabLayout
         android:layout_below="@id/toolbarSaukhiDN"
@@ -57,7 +60,6 @@
         app:menu_colorPressed="@color/mauNut"
         app:menu_colorRipple="@color/mauChuDao"
         fab:menu_backgroundColor="#ccffffff"
-
         >
 
         <com.github.clans.fab.FloatingActionButton
@@ -89,21 +91,7 @@
 
     </com.github.clans.fab.FloatingActionMenu>
 
-    <!--<android.support.design.widget.BottomNavigationView-->
-        <!--android:id="@+id/bottomNavigationView"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:itemTextColor="@color/mauTrang"-->
-        <!--app:itemIconTint="@color/mauTrang"-->
-        <!--app:itemBackground="@color/mauChuDao"-->
-        <!--app:menu="@menu/item_menu_bottombar"-->
-        <!--&gt;-->
 
-
-    <!--</android.support.design.widget.BottomNavigationView>-->
          <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
              android:id="@+id/bottomNavigationView"
              android:layout_alignParentBottom="true"

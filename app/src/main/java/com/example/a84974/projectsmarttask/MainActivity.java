@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.a84974.projectsmarttask.ahbottombaractivity.thongBaoBottom;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     // khi bam nut dang ky
     public void xulydangky(View view) {
-        startActivity(new Intent(this,saukhidangnhap.class));
+        startActivity(new Intent(this,thongBaoBottom.class));
     }
 
     // khi bam nut dang nhap

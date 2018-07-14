@@ -3,7 +3,9 @@
     <string name="ten_app">SmartTask</string>
     <string name="textMain">Chào bạn nhỏ!</string>
     <string name="textMain2">Bạn đã sẵn sàng thực hiện công việc \n \t \t \t \t \t \t \t \t chưa?</string>
-    <string name="title_home">Hello</string>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_noti">Thông báo</string>
+    <string name="title_user">Tài khoản</string>
     <string-array name="demo_array">
         <item>Demo</item>
     </string-array>

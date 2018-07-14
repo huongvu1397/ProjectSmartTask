@@ -14,7 +14,9 @@ import android.widget.Toast;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
-import com.example.a84974.projectsmarttask.adapter.MainPagerAdapter;
+import com.example.a84974.projectsmarttask.ahbottombaractivity.taiKhoanBottom;
+import com.example.a84974.projectsmarttask.ahbottombaractivity.thongBaoBottom;
+import com.example.a84974.projectsmarttask.mainadapter.MainPagerAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
@@ -27,11 +29,12 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
     private ArrayList<AHBottomNavigationItem> bottomNavigationItems = new ArrayList<>();
     private FloatingActionMenu fab;
     private FloatingActionButton fab1,fab2,fab3;
-    private AHBottomNavigation bottomNavigation;
     private FragmentBang fragmentBang;
     private FragmentVitri FragmentVitri;
     private FragmentLich FragmentLich;
     private FragmentAnh FragmentAnh;
+    //UI
+    private AHBottomNavigation bottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,50 +72,39 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
 
             }
         });
-
         fab.setClosedOnTouchOutside(true);
-        //fab.hideMenuButton(false);
         fab1.setOnClickListener(this);
         fab2.setOnClickListener(this);
         fab3.setOnClickListener(this);
 
+        initUI();
+    }
 
-
-
-        bottomNavigation =  findViewById(R.id.bottomNavigationView);
+    private void initUI() {
+        bottomNavigation = findViewById(R.id.bottomNavigationView);
         //create item
         AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.title_home, R.drawable.ic_launcher_background, R.color.mauTrang);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.title_home, R.drawable.ic_launcher_background, R.color.mauTrang);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.title_home, R.drawable.ic_launcher_background, R.color.mauTrang);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.title_noti, R.drawable.ic_launcher_background, R.color.mauTrang);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.title_user, R.drawable.ic_launcher_background, R.color.mauTrang);
         bottomNavigationItems.add(item1);
         bottomNavigationItems.add(item2);
         bottomNavigationItems.add(item3);
-        //add item
+        //thêm item vào bottom bar qua arraylist bottomNavigationItems
         bottomNavigation.addItems(bottomNavigationItems);
-        //setcolor
+        //màu nền của bottom bar
         bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#0091EA"));
         // Disable the translation inside the CoordinatorLayout
-        bottomNavigation.setBehaviorTranslationEnabled(false);
+        //bottomNavigation.setBehaviorTranslationEnabled(false);
         // Change colors
-        bottomNavigation.setAccentColor(Color.parseColor("#F63D2B"));
-        bottomNavigation.setInactiveColor(Color.parseColor("#747474"));
+        //bottomNavigation.setAccentColor(Color.parseColor("#F63D2B"));
+        //bottomNavigation.setInactiveColor(Color.parseColor("#747474"));
         // Force to tint the drawable (useful for font with icon for example)
         bottomNavigation.setForceTint(true);
-        // Display color under navigation bar (API 21+)
-// Don't forget these lines in your style-v21
-// <item name="android:windowTranslucentNavigation">true</item>
-// <item name="android:fitsSystemWindows">true</item>
-        bottomNavigation.setTranslucentNavigationEnabled(true);
-
-// Manage titles
-        //bottomNavigation.setTitleState(AHBottomNavigation.TitleState.SHOW_WHEN_ACTIVE);
-        bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
-        //bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_HIDE);
         // Set current item programmatically
         bottomNavigation.setCurrentItem(0);
         // Add or remove notification for each item
         //bottomNavigation.setNotification("3", 1);
-         // OR
+        // OR
         AHNotification notification = new AHNotification.Builder()
                 .setText("4")
                 .setBackgroundColor(ContextCompat.getColor(saukhidangnhap.this, R.color.colorAccent))
@@ -120,53 +112,53 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
                 .build();
         bottomNavigation.setNotification(notification, 1);
 
-// Enable / disable item & set disable color
+        // Enable / disable item & set disable color
 //        bottomNavigation.enableItemAtPosition(1);
 //        bottomNavigation.enableItemAtPosition(0);
 //        bottomNavigation.enableItemAtPosition(2);
-        //bottomNavigation.disableItemAtPosition(2);
+//        bottomNavigation.disableItemAtPosition(2);
+        //
+        //set item disable color
         bottomNavigation.setItemDisableColor(Color.parseColor("#3A000000"));
-        // Set listeners
+        // Set listeners khi ấn vào item bottom bar
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public boolean onTabSelected(int position, boolean wasSelected) {
+                //show fragment
                 if(position==0){
-                        startActivity(new Intent(getApplicationContext(),saukhidangnhap.class));
-                        finish();
-                        bottomNavigation.disableItemAtPosition(0);
+                    //bottomNavigation.disableItemAtPosition(0);
+                    startActivity(new Intent(getApplication(), saukhidangnhap.class));
+                    finish();
                 }
-                if(position==1){
+                else if(position==1){
                     //remove notification wwhen clicked
                     bottomNavigation.setNotification("",1);
+                    Intent intent = new Intent(getApplication(),thongBaoBottom.class);
+                    startActivity(intent);
+                    //finish();
+                }
+                else if(position==2){
 
+                    startActivity(new Intent(getApplicationContext(), taiKhoanBottom.class));
 
                 }
-
                 return true;
             }
         }) ;
+
+
+
         bottomNavigation.setOnNavigationPositionListener(new AHBottomNavigation.OnNavigationPositionListener() {
             @Override
             public void onPositionChange(int y) {
-                Toast.makeText(saukhidangnhap.this, "Hello mother fucker", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Âccacacac", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
-    /**
-     * Show or hide the bottom navigation with animation
-     */
-
-    public void showOrHideBottomNavigation(boolean show) {
-        if (show) {
-            bottomNavigation.restoreBottomNavigation(true);
-        } else {
-            bottomNavigation.hideBottomNavigation(true);
-        }
     }
 
 
-
+    //onClick trên floating action menu
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -182,4 +174,6 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+
+
 }

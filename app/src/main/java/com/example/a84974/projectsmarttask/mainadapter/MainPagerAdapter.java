@@ -1,4 +1,4 @@
-package com.example.a84974.projectsmarttask.adapter;
+package com.example.a84974.projectsmarttask.mainadapter;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -38,6 +38,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
             default: return fragmentBang;
         }
     }
+
+
 
 
 

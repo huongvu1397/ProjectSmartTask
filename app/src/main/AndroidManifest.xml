@@ -35,14 +35,11 @@
         </activity>
         <activity android:name=".saukhidangnhap" />
         <activity android:name=".dangnhapapp" />
-        <!-- <activity android:name=".FragmentAnh" /> -->
-        <!-- <activity android:name=".FragmentBang" /> -->
-        <!-- <activity android:name=".FragmentLich" /> -->
-        <!-- <activity android:name=".FragmentVitri"></activity> -->
         <activity android:name=".Bang" />
         <activity android:name=".bottomHome" />
-        <activity android:name=".thongBaobottom" />
-        <activity android:name=".TaoBang"></activity>
+        <activity android:name=".TaoBang" />
+        <activity android:name=".ahbottombaractivity.thongBaoBottom" />
+        <activity android:name=".ahbottombaractivity.taiKhoanBottom"></activity>
     </application>
 
 </manifest>
