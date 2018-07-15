@@ -16,7 +16,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 import com.example.a84974.projectsmarttask.ahbottombaractivity.taiKhoanBottom;
 import com.example.a84974.projectsmarttask.ahbottombaractivity.thongBaoBottom;
-import com.example.a84974.projectsmarttask.mainadapter.MainPagerAdapter;
+import com.example.a84974.projectsmarttask.adapter.MainPagerAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 

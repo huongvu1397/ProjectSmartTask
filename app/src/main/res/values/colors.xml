@@ -7,4 +7,5 @@
     <color name="mauTrang">#ffffff</color>
     <color name="mauNut">#0288D1</color>
     <color name="mau">#3A000000</color>
+    <color name="mauDen">#000</color>
 </resources>

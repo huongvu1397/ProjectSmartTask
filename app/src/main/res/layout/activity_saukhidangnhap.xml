@@ -90,14 +90,13 @@
             fab:fab_label="Thêm" />
 
     </com.github.clans.fab.FloatingActionMenu>
+    <include layout="@layout/bottombar"/>
 
-
-         <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
-             android:id="@+id/bottomNavigationView"
-             android:layout_alignParentBottom="true"
-             android:layout_width="match_parent"
-             android:layout_height="50dp">
-
-         </com.aurelhubert.ahbottomnavigation.AHBottomNavigation>
+         <!--<com.aurelhubert.ahbottomnavigation.AHBottomNavigation-->
+             <!--android:id="@+id/bottomNavigationView"-->
+             <!--android:layout_alignParentBottom="true"-->
+             <!--android:layout_width="match_parent"-->
+             <!--android:layout_height="50dp">-->
+         <!--</com.aurelhubert.ahbottomnavigation.AHBottomNavigation>-->
 
 </RelativeLayout>

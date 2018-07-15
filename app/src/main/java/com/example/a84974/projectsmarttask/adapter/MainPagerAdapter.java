@@ -1,4 +1,4 @@
-package com.example.a84974.projectsmarttask.mainadapter;
+package com.example.a84974.projectsmarttask.adapter;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
