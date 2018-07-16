@@ -55,9 +55,6 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
     private ClusterManager<MyItem> mClusterManager;
 
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,7 +74,7 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
-    public void init(){
+    public void init() {
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.myMap);
         if (mapFragment != null) {
@@ -93,7 +90,8 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
             outState.putParcelable(KEY_CAMERA_POSITION, map.getCameraPosition());
             outState.putParcelable(KEY_LOCATION, mLastKnownLocation);
             super.onSaveInstanceState(outState);
-        }    }
+        }
+    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -106,7 +104,6 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
         map = googleMap;
         MapsInitializer.initialize(getContext());
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
 
 
         //map.getUiSettings().setCompassEnabled(true);
@@ -137,6 +134,7 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
 //        .title("Sydney")
 //        .snippet("the most fuccked").position(sydney));
     }
+
     private void getDeviceLocation() {
         /*
          * Get the best and most recent location of the device, which may be null in rare
@@ -147,31 +145,33 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
                 Task<Location> locationResult = mFusedLocationProviderClient.getLastLocation();
                 locationResult.addOnCompleteListener(getActivity(), new OnCompleteListener<Location>() {
                     @Override
-                    public void onComplete(@NonNull Task<Location> task) {
-                        if (task.isSuccessful()&& task.getResult() != null ) {
+                    public void onComplete(Task<Location> task) {
+                        if (task.isSuccessful() ) {
                             // Set the map's camera position to the current location of the device.
                             mLastKnownLocation = task.getResult();
                             map.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                     new LatLng(mLastKnownLocation.getLatitude(),
                                             mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                            Toast.makeText(getActivity(), "Lat "+mLastKnownLocation.getLatitude(), Toast.LENGTH_SHORT).show();
-                            map.addMarker(new MarkerOptions().title("1").snippet("the most location fukc").position(new LatLng(mLastKnownLocation.getLatitude(),mLastKnownLocation.getLongitude())));
-                             setUpClusterer(mLastKnownLocation.getLatitude(),mLastKnownLocation.getLongitude());
+                            Toast.makeText(getActivity(), "Lat " + mLastKnownLocation.getLatitude(), Toast.LENGTH_SHORT).show();
+                            map.addMarker(new MarkerOptions().title("1").snippet("the most location fukc").position(new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude())));
+                            setUpClusterer(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude());
                         } else {
                             Log.d(TAG, "Current location is null. Using defaults.");
                             Log.e(TAG, "Exception: %s", task.getException());
                             map.moveCamera(CameraUpdateFactory
                                     .newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
                             map.getUiSettings().setMyLocationButtonEnabled(false);
+                            Toast.makeText(getActivity(), "Failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
             }
-        } catch (SecurityException e)  {
+        } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
     }
-    private void setUpClusterer(double lat,double lng) {
+
+    private void setUpClusterer(double lat, double lng) {
         // Position the map.
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng), DEFAULT_ZOOM));
 
@@ -185,9 +185,10 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
         map.setOnMarkerClickListener(mClusterManager);
 
         // Add cluster items (markers) to the cluster manager.
-        addItems(lat,lng);
+        addItems(lat, lng);
     }
-    private void addItems(double lat,double lng) {
+
+    private void addItems(double lat, double lng) {
 
         // Set some lat/lng coordinates to start with.
         //double lat = 51.5145160;
@@ -200,6 +201,7 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
             lng = lng + offset;
             MyItem offsetItem = new MyItem(lat, lng);
             mClusterManager.addItem(offsetItem);
+            //map.addMarker(new MarkerOptions().title("1").snippet("the most location fukc").position(new LatLng(lat,lng)));
         }
     }
 
@@ -238,7 +240,7 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
                 mLastKnownLocation = null;
                 getLocationPermission();
             }
-        } catch (SecurityException e)  {
+        } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
     }

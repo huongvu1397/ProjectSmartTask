@@ -21,7 +21,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCQmgDJbcTwwbWRWtlZjc3tTcfxGLw4Xls" />
+            android:value="AIzaSyA82eFumj5P4IhwW9uQcuJz3dhhUqpxdLw" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -39,7 +39,8 @@
         <activity android:name=".bottomHome" />
         <activity android:name=".TaoBang" />
         <activity android:name=".ahbottombaractivity.thongBaoBottom" />
-        <activity android:name=".ahbottombaractivity.taiKhoanBottom"></activity>
+        <activity android:name=".ahbottombaractivity.taiKhoanBottom" />
+
     </application>
 
 </manifest>

@@ -30,7 +30,7 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
     private FloatingActionMenu fab;
     private FloatingActionButton fab1,fab2,fab3;
     private FragmentBang fragmentBang;
-    private FragmentVitri FragmentVitri;
+    private com.example.a84974.projectsmarttask.FragmentVitri FragmentVitri;
     private FragmentLich FragmentLich;
     private FragmentAnh FragmentAnh;
     //UI
