@@ -201,7 +201,6 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
             lng = lng + offset;
             MyItem offsetItem = new MyItem(lat, lng);
             mClusterManager.addItem(offsetItem);
-            //map.addMarker(new MarkerOptions().title("1").snippet("the most location fukc").position(new LatLng(lat,lng)));
         }
     }
 

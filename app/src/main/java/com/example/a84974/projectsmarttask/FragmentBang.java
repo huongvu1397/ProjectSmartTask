@@ -23,7 +23,7 @@ public class FragmentBang extends Fragment {
             lstViewcanhan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent a = new Intent(getActivity(),Bang.class);
+                    Intent a = new Intent(getActivity(),truycapBang.class);
                     startActivity(a);
 
                 }

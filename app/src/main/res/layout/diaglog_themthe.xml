@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="200dp">
+
+    <EditText
+        android:hint="Tiêu đề"
+        android:id="@+id/tieudethe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:hint="Mô tả"
+        android:id="@+id/motathe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/mauXanhlaCay"
+        android:layout_gravity="bottom|right"
+        android:textSize="25dp"
+        android:text="Thêm"
+        android:id="@+id/btnThem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="trove"
+        />
+
+</LinearLayout>

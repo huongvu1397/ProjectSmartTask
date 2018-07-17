@@ -4,23 +4,32 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-public class Bang extends AppCompatActivity {
+import com.example.a84974.projectsmarttask.adapter.SlideAdapter;
+
+public class truycapBang extends AppCompatActivity {
     private ViewPager slideView;
-    private LinearLayout mDotlayout;
+    private SlideAdapter slideAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truycap_bang);
         slideView = findViewById(R.id.viewPager2);
-        mDotlayout = findViewById(R.id.mdotlayout);
+        slideAdapter = new SlideAdapter(this);
+        slideView.setAdapter(slideAdapter);
+
     }
+
 
     public void trove(View view) {
         finish();
     }
+
 
 
 }

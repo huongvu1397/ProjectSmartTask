@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mauChuDao"
-    tools:context=".Bang">
+    tools:context=".truycapBang">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:background="@color/mauNut"
@@ -23,7 +23,6 @@
                 android:src="@android:drawable/ic_delete"
                 android:onClick="trove"
                 />
-
         </LinearLayout>
 
 
@@ -32,8 +31,9 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager2"
         android:layout_width="match_parent"
-        android:layout_height="402dp"
-        android:layout_below="@id/toolbar">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        >
 
     </android.support.v4.view.ViewPager>
 
@@ -42,8 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="459dp"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="vertical">
+
+    </LinearLayout>
 
 </RelativeLayout>
