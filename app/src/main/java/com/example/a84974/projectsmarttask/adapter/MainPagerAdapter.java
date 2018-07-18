@@ -5,16 +5,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.a84974.projectsmarttask.FragmentBang;
-import com.example.a84974.projectsmarttask.FragmentAnh;
-import com.example.a84974.projectsmarttask.FragmentLich;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentBang;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentAnh;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentLich;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
     private FragmentBang fragmentBang;
-    private com.example.a84974.projectsmarttask.FragmentVitri FragmentVitri;
+    private com.example.a84974.projectsmarttask.fragment_main.FragmentVitri FragmentVitri;
     private FragmentLich FragmentLich;
     private FragmentAnh FragmentAnh;
-    public MainPagerAdapter(FragmentManager fm, FragmentBang fragmentBang, FragmentAnh FragmentAnh, FragmentLich FragmentLich, com.example.a84974.projectsmarttask.FragmentVitri FragmentVitri) {
+    public MainPagerAdapter(FragmentManager fm, FragmentBang fragmentBang, FragmentAnh FragmentAnh, FragmentLich FragmentLich, com.example.a84974.projectsmarttask.fragment_main.FragmentVitri FragmentVitri) {
         super(fm);
         this.FragmentAnh = FragmentAnh;
         this.fragmentBang = fragmentBang;

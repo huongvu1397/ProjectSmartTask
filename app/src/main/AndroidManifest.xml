@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.a84974.projectsmarttask"
-    >
+    package="com.example.a84974.projectsmarttask">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -35,13 +34,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".saukhidangnhap" />
-        <activity android:name=".dangnhapapp" />
-        <activity android:name=".truycapBang" />
-        <activity android:name=".bottomHome" />
+        <activity android:name=".BangPager" />
         <activity android:name=".TaoBang" />
         <activity android:name=".ahbottombaractivity.thongBaoBottom" />
         <activity android:name=".ahbottombaractivity.taiKhoanBottom" />
-
+        <activity android:name=".DeepInSideTruycapBang" />
+        <activity android:name=".fragment_bang.FragmentToDo" />
+        <activity android:name=".fragment_bang.FragmentDoing" />
+        <activity android:name=".fragment_bang.FragmentDone" />
+        <activity android:name=".fragment_bang.FragmentThem"></activity>
     </application>
 
 </manifest>

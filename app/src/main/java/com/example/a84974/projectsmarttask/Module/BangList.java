@@ -1,14 +1,14 @@
 package com.example.a84974.projectsmarttask.Module;
 
-public class bAng {
+public class BangList {
     private String tieude,icon;
 
-    public bAng(String tieude, String icon) {
+    public BangList(String tieude, String icon) {
         this.tieude = tieude;
         this.icon = icon;
     }
 
-    public bAng(String tieude) {
+    public BangList(String tieude) {
         this.tieude = tieude;
     }
 

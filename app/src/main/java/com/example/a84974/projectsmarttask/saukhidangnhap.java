@@ -17,6 +17,10 @@ import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 import com.example.a84974.projectsmarttask.ahbottombaractivity.taiKhoanBottom;
 import com.example.a84974.projectsmarttask.ahbottombaractivity.thongBaoBottom;
 import com.example.a84974.projectsmarttask.adapter.MainPagerAdapter;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentAnh;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentBang;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentLich;
+import com.example.a84974.projectsmarttask.fragment_main.FragmentVitri;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
@@ -30,9 +34,9 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
     private FloatingActionMenu fab;
     private FloatingActionButton fab1,fab2,fab3;
     private FragmentBang fragmentBang;
-    private com.example.a84974.projectsmarttask.FragmentVitri FragmentVitri;
-    private FragmentLich FragmentLich;
-    private FragmentAnh FragmentAnh;
+    private com.example.a84974.projectsmarttask.fragment_main.FragmentVitri FragmentVitri;
+    private com.example.a84974.projectsmarttask.fragment_main.FragmentLich FragmentLich;
+    private com.example.a84974.projectsmarttask.fragment_main.FragmentAnh FragmentAnh;
     //UI
     private AHBottomNavigation bottomNavigation;
 

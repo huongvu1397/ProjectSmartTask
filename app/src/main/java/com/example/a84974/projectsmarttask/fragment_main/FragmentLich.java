@@ -1,9 +1,8 @@
-package com.example.a84974.projectsmarttask;
+package com.example.a84974.projectsmarttask.fragment_main;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,7 @@ import android.widget.Toast;
 
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
-import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
-import com.github.clans.fab.FloatingActionButton;
+import com.example.a84974.projectsmarttask.R;
 import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.ArrayList;
@@ -28,7 +26,7 @@ public class FragmentLich extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_frag_lich,container,false);
+        View view = inflater.inflate(R.layout.activity_fragment_main_lich,container,false);
         calendarView = view.findViewById(R.id.calendarview);
         menufab = view.findViewById(R.id.menu_fab);
 

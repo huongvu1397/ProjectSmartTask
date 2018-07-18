@@ -1,4 +1,4 @@
-package com.example.a84974.projectsmarttask;
+package com.example.a84974.projectsmarttask.Module;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;

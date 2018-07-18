@@ -1,4 +1,4 @@
-package com.example.a84974.projectsmarttask;
+package com.example.a84974.projectsmarttask.fragment_main;
 
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.a84974.projectsmarttask.Module.MyItem;
+import com.example.a84974.projectsmarttask.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -58,7 +60,7 @@ public class FragmentVitri extends Fragment implements OnMapReadyCallback {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.activity_frag_vitri, container, false);
+        view = inflater.inflate(R.layout.activity_fragment_main_vitri, container, false);
 
         //SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.myMap);
         // Construct a FusedLocationProviderClient.
