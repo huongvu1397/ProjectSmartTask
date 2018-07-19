@@ -39,10 +39,6 @@
         <activity android:name=".ahbottombaractivity.thongBaoBottom" />
         <activity android:name=".ahbottombaractivity.taiKhoanBottom" />
         <activity android:name=".DeepInSideTruycapBang" />
-        <activity android:name=".fragment_bang.FragmentToDo" />
-        <activity android:name=".fragment_bang.FragmentDoing" />
-        <activity android:name=".fragment_bang.FragmentDone" />
-        <activity android:name=".fragment_bang.FragmentThem"></activity>
     </application>
 
 </manifest>

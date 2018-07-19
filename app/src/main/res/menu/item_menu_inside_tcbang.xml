@@ -4,10 +4,9 @@
     <item
         android:id="@+id/moveItemList"
         android:title="Move list"
-        app:showAsAction="always"/>
+        />
     <item
         android:id="@+id/moveItemList2"
-        android:title="Move list"
-        app:showAsAction="ifRoom"/>
+        android:title="Delete List" />
 
 </menu>

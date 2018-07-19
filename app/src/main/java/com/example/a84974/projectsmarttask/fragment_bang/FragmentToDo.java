@@ -9,11 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a84974.projectsmarttask.Module.BangList;
 import com.example.a84974.projectsmarttask.R;
@@ -29,6 +34,7 @@ public class FragmentToDo extends Fragment {
     BangListAdapter bangListAdapter;
     TextView themthe;
     String gettieudethe,getmotathe;
+    Toolbar tb;
 
 
     @Nullable
@@ -37,6 +43,12 @@ public class FragmentToDo extends Fragment {
         View view = inflater.inflate(R.layout.activity_fragment_bang_todo,container,false);
         rcView = view.findViewById(R.id.rcViewFBangTodo);
         themthe = view.findViewById(R.id.btnFBangThemTheTodo);
+        //add item
+        tb = view.findViewById(R.id.tbFBangTodo);
+        tb.inflateMenu(R.menu.item_menu_inside_tcbang);
+        //Menu menu = tb.getMenu();
+        tbClicked(view);
+
         bangLists = new ArrayList<>();
         fakeData();
         bangListAdapter = new BangListAdapter(bangLists,context);
@@ -46,6 +58,27 @@ public class FragmentToDo extends Fragment {
         inDialog();
         return view;
     }
+    // sự kiện cho toolbar option menu
+    public void tbClicked(View view){
+        tb.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.moveItemList:
+                        Toast.makeText(view.getContext(), "Move List", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.moveItemList2:
+                        Toast.makeText(view.getContext(), "Delete List", Toast.LENGTH_SHORT).show();
+                        return true;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
+
     public void fakeData(){
         bangLists.add(new BangList("Tên thẻ 1"));
         bangLists.add(new BangList("Tên thẻ 2"));
