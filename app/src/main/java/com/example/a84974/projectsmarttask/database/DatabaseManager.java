@@ -36,6 +36,9 @@ public class DatabaseManager {
         values.put("MauNen", maunen);
         database.insert(TB_Bang, null, values);
     }
+    public void deleteBang(){
+
+    }
     //
     public Cursor getBang() {
         return database.query(TB_Bang,
@@ -50,4 +53,5 @@ public class DatabaseManager {
         OpenHelper helper = new OpenHelper(context);
         database = helper.getWritableDatabase();
     }
+
 }
