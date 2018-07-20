@@ -63,7 +63,6 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
-
             @Override
             public void onPageSelected(int position) {
                        if(position==3){
@@ -73,14 +72,12 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
         fab.setClosedOnTouchOutside(true);
         fab1.setOnClickListener(this);
         fab2.setOnClickListener(this);
         fab3.setOnClickListener(this);
-
         initUI();
     }
 
@@ -115,7 +112,6 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
                 .setTextColor(ContextCompat.getColor(saukhidangnhap.this, R.color.mauTrang))
                 .build();
         bottomNavigation.setNotification(notification, 1);
-
         // Enable / disable item & set disable color
 //        bottomNavigation.enableItemAtPosition(1);
 //        bottomNavigation.enableItemAtPosition(0);

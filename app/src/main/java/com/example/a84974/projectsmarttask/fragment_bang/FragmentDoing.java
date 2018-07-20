@@ -9,11 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import com.example.a84974.projectsmarttask.Module.BangList;
 import com.example.a84974.projectsmarttask.R;
@@ -29,12 +33,18 @@ public class FragmentDoing extends Fragment {
     BangListAdapter bangListAdapter;
     TextView themthe;
     String gettieudethe,getmotathe;
+    Toolbar tb;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_fragment_bang_doing,container,false);
         rcView = view.findViewById(R.id.rcViewFBangDoing);
         themthe = view.findViewById(R.id.btnFBangThemTheDoing);
+        //additem tb
+        tb = view.findViewById(R.id.tbFBangDoing);
+        tb.inflateMenu(R.menu.item_menu_inside_tcbang);
+        tbClicked(view);
+
         bangLists = new ArrayList<>();
         fakeData();
         bangListAdapter = new BangListAdapter(bangLists,context);
@@ -48,6 +58,25 @@ public class FragmentDoing extends Fragment {
         bangLists.add(new BangList("Tên thẻ 3"));
         bangLists.add(new BangList("Tên thẻ 4"));
     }
+    public void tbClicked(View view){
+        tb.setOnMenuItemClickListener(new android.support.v7.widget.Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.moveItemList:
+                        Toast.makeText(view.getContext(), "Move List", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.moveItemList2:
+                        Toast.makeText(view.getContext(), "Delete List", Toast.LENGTH_SHORT).show();
+                        return true;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
     public void inDialog(){
         themthe.setOnClickListener(new View.OnClickListener() {
             @Override

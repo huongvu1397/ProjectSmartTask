@@ -63,6 +63,7 @@
             android:textSize="20dp"
             android:text="Tên"/>
         <EditText
+            android:id="@+id/editTenBang"
             android:maxLines="1"
             android:layout_width="match_parent"
             android:hint="Bảng mới"
@@ -94,6 +95,7 @@
                 android:textSize="20dp"
                 android:text="Phông nền"/>
             <ImageView
+                android:id="@+id/laymau"
                 android:layout_marginLeft="200dp"
                 android:layout_width="20dp"
                 android:layout_height="30dp"

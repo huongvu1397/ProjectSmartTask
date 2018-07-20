@@ -23,7 +23,7 @@
         android:id="@+id/lstViewCaNhan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/demo_array"
+
         ></ListView>
     <TextView
         android:layout_width="wrap_content"
