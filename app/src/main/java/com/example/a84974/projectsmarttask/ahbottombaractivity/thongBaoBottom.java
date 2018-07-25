@@ -52,9 +52,9 @@ public class thongBaoBottom extends AppCompatActivity {
     private void initUI() {
         bottomNavigation = findViewById(R.id.bottomNavigationView);
         //create item
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.title_home, R.drawable.ic_launcher_background, R.color.mauTrang);
-        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.title_noti, R.drawable.ic_launcher_background, R.color.mauTrang);
-        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.title_user, R.drawable.ic_launcher_background, R.color.mauTrang);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem(R.string.title_home, R.drawable.ic_home, R.color.mauTrang);
+        AHBottomNavigationItem item2 = new AHBottomNavigationItem(R.string.title_noti, R.drawable.ic_public_white, R.color.mauTrang);
+        AHBottomNavigationItem item3 = new AHBottomNavigationItem(R.string.title_user, R.drawable.ic_action_user, R.color.mauTrang);
         bottomNavigationItems.add(item1);
         bottomNavigationItems.add(item2);
         bottomNavigationItems.add(item3);
@@ -65,8 +65,8 @@ public class thongBaoBottom extends AppCompatActivity {
         // Disable the translation inside the CoordinatorLayout
         //bottomNavigation.setBehaviorTranslationEnabled(false);
         // Change colors
-        //bottomNavigation.setAccentColor(Color.parseColor("#F63D2B"));
-        //bottomNavigation.setInactiveColor(Color.parseColor("#747474"));
+        bottomNavigation.setAccentColor(Color.parseColor("#ffffff"));
+        bottomNavigation.setInactiveColor(Color.parseColor("#747474"));
         // Force to tint the drawable (useful for font with icon for example)
         bottomNavigation.setForceTint(true);
         // Set current item programmatically

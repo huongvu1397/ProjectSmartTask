@@ -47,7 +47,7 @@ public class FragmentDoing extends Fragment {
 
         bangLists = new ArrayList<>();
         fakeData();
-        bangListAdapter = new BangListAdapter(bangLists,context);
+        bangListAdapter = new BangListAdapter(bangLists,context,rcView);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(context);
         rcView.setLayoutManager(manager);
         rcView.setAdapter(bangListAdapter);

@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:background="@color/mauNut"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -20,8 +20,8 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_delete"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_keyboard_backspace"
                 android:onClick="trove"
                 android:layout_gravity="center"
                 />
@@ -29,6 +29,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Bảng"
+                android:textColor="@color/mauTrang"
                 android:layout_weight="4"
                 android:textSize="30dp"
                 android:gravity="center"

@@ -6,15 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".fragment_main.FragmentBang">
-    <android.support.v7.widget.SearchView
-        android:id="@+id/searchViewBang"
-        android:imeOptions="actionDone"
-        android:layout_width="match_parent"
-        android:background="@color/mauChuDao"
-        android:layout_height="30dp"></android.support.v7.widget.SearchView>
     <TextView
         android:id="@+id/txtView1"
-
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bảng cá nhân"
@@ -29,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bảng nhóm"
+        android:textStyle="bold"
         android:textSize="20dp"/>
     <ListView
         android:id="@+id/lstViewNhom"

@@ -2,6 +2,7 @@ package com.example.a84974.projectsmarttask.fragment_bang;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,12 +18,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a84974.projectsmarttask.Module.BangList;
 import com.example.a84974.projectsmarttask.R;
 import com.example.a84974.projectsmarttask.adapter.BangListAdapter;
+import com.example.a84974.projectsmarttask.database.DatabaseManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,14 +36,17 @@ public class FragmentToDo extends Fragment {
     List<BangList> bangLists;
     BangListAdapter bangListAdapter;
     TextView themthe;
-    String gettieudethe,getmotathe;
+    String gettieudethe, getmotathe;
     Toolbar tb;
+    private Cursor cursor;
+    private DatabaseManager manager;
+    private SimpleCursorAdapter simpleCursorAdapter;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_fragment_bang_todo,container,false);
+        View view = inflater.inflate(R.layout.activity_fragment_bang_todo, container, false);
         rcView = view.findViewById(R.id.rcViewFBangTodo);
         themthe = view.findViewById(R.id.btnFBangThemTheTodo);
         //add item
@@ -48,22 +54,25 @@ public class FragmentToDo extends Fragment {
         tb.inflateMenu(R.menu.item_menu_inside_tcbang);
         //Menu menu = tb.getMenu();
         tbClicked(view);
+        manager = new DatabaseManager(getContext());
 
         bangLists = new ArrayList<>();
-        fakeData();
-        bangListAdapter = new BangListAdapter(bangLists,context);
+        //fakeData();
+        bangListAdapter = new BangListAdapter(bangLists, context,rcView);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(context);
         rcView.setLayoutManager(manager);
-        rcView.setAdapter(bangListAdapter);
+        //rcView.setAdapter(bangListAdapter);
+        getCard();
         inDialog();
         return view;
     }
+
     // sự kiện cho toolbar option menu
-    public void tbClicked(View view){
+    public void tbClicked(View view) {
         tb.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.moveItemList:
                         Toast.makeText(view.getContext(), "Move List", Toast.LENGTH_SHORT).show();
                         return true;
@@ -79,11 +88,12 @@ public class FragmentToDo extends Fragment {
     }
 
 
-    public void fakeData(){
+    public void fakeData() {
         bangLists.add(new BangList("Tên thẻ 1"));
         bangLists.add(new BangList("Tên thẻ 2"));
     }
-    public void inDialog(){
+
+    public void inDialog() {
         themthe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,14 +107,42 @@ public class FragmentToDo extends Fragment {
                 themThe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view1) {
+                        // su kien nut them the
                         gettieudethe = edtTitle.getText().toString().trim();
                         getmotathe = edtMota.getText().toString().trim();
-                        bangLists.add(new BangList(gettieudethe));
+                        manager.inserThe(gettieudethe,getmotathe);
+                        //bangLists.add(new BangList(gettieudethe));
+                        //getCard();
                         dialog.cancel();
                     }
                 });
                 dialog.show();
             }
         });
+    }
+    public void getCard(){
+        cursor = manager.getCard();
+
+//        simpleCursorAdapter = new SimpleCursorAdapter(getContext(),
+//                R.layout.item_bang_the,
+//                cursor,
+//                new String[]{"TenThe"},
+//                new int[]{R.id.cardTitle});
+//        rcView.setAdapter(simpleCursorAdapter);
+        //LOOP AND ADD TO ARRAYLIST
+        while(cursor.moveToNext()){
+            int id=cursor.getInt(0);
+            String name=cursor.getString(1);
+            String mota=cursor.getString(2);
+
+            BangList b = new BangList(name);
+            bangLists.add(b);
+            bangListAdapter.notifyDataSetChanged();
+        }
+
+        rcView.setAdapter(bangListAdapter);
+
+
+
     }
 }

@@ -5,8 +5,8 @@
    <ImageView
        android:id="@+id/ivMaunen"
        android:layout_margin="4dp"
-       android:layout_width="30dp"
-       android:layout_height="30dp"
+       android:layout_width="25dp"
+       android:layout_height="25dp"
        android:src="@color/mauChuDao"
        />
 
@@ -14,8 +14,7 @@
        android:layout_margin="4dp"
        android:id="@+id/tvTenBang"
        android:text="SinhVien"
-       android:textStyle="bold"
-       android:textSize="20dp"
+       android:textSize="18dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content" />
 

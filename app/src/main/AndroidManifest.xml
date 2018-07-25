@@ -38,7 +38,7 @@
         <activity android:name=".TaoBang" />
         <activity android:name=".ahbottombaractivity.thongBaoBottom" />
         <activity android:name=".ahbottombaractivity.taiKhoanBottom" />
-        <activity android:name=".DeepInSideTruycapBang" />
+        <activity android:name=".UsingCard" />
     </application>
 
 </manifest>

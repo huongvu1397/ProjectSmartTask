@@ -2,6 +2,7 @@ package com.example.a84974.projectsmarttask.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -12,20 +13,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a84974.projectsmarttask.DeepInSideTruycapBang;
+import com.example.a84974.projectsmarttask.UsingCard;
 import com.example.a84974.projectsmarttask.Module.BangList;
 import com.example.a84974.projectsmarttask.R;
-import com.example.a84974.projectsmarttask.fragment_bang.FragmentToDo;
 
 import java.util.List;
 
 public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHolder> {
     private List<BangList> BangLists;
     private Context context;
+    private RecyclerView mRecyclerV;
 
-    public BangListAdapter(List<BangList> BangLists, Context context) {
+    public BangListAdapter(List<BangList> BangLists, Context context,RecyclerView rcView) {
         this.context = context;
         this.BangLists = BangLists;
+        this.mRecyclerV = rcView;
     }
 
 
@@ -47,8 +49,10 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
                  holder.cardView.setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View view) {
-                         Toast.makeText(view.getContext(), "Hello"+bg.getTieude(), Toast.LENGTH_SHORT).show();
-                         view.getContext().startActivity(new Intent(view.getContext(), DeepInSideTruycapBang.class));
+                                 Intent intent = new Intent(view.getContext(),UsingCard.class);
+                                 intent.putExtra("title",bg.getTieude());
+                                 Toast.makeText(view.getContext(), "Hello" + bg.getTieude(), Toast.LENGTH_SHORT).show();
+                                 view.getContext().startActivity(intent);
                      }
                  });
 

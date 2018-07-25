@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseManager {
     public final String DB_NAME = "quanlybang";
     public final String TB_Bang = "bang";
-    public final int DB_VERSION = 1;
+    public final String TB_Card = "card";
+    public final String TB_List = "list";
+    public final int DB_VERSION = 2;
     private SQLiteDatabase database;
 
     public class OpenHelper extends SQLiteOpenHelper {
@@ -19,11 +21,14 @@ public class DatabaseManager {
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
             String taoBang = "CREATE TABLE IF NOT EXISTS bang(_id INTEGER PRIMARY KEY AUTOINCREMENT,TenBang TEXT,QuyenXem TEXT,MauNen TEXT)";
+            String taoThe = "CREATE TABLE IF NOT EXISTS card(_id INTEGER PRIMARY KEY AUTOINCREMENT,TenThe TEXT,MoTa TEXT)";
             sqLiteDatabase.execSQL(taoBang);
+            sqLiteDatabase.execSQL(taoThe);
         }
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS bang");
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS card");
             onCreate(sqLiteDatabase);
         }
 
@@ -36,12 +41,32 @@ public class DatabaseManager {
         values.put("MauNen", maunen);
         database.insert(TB_Bang, null, values);
     }
+    //them the
+    public void inserThe(String tenthe, String mota) {
+        ContentValues values = new ContentValues();
+        values.put("TenThe", tenthe);
+        values.put("MoTa", mota);
+        database.insert(TB_Card, null, values);
+    }
+    //xoa bang
     public void deleteBang(){
 
     }
     //
     public Cursor getBang() {
         return database.query(TB_Bang,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null);
+    }
+    //getThe
+    public Cursor getCard() {
+        //String[] columns={"id","TenThe","MoTa"};
+
+        return database.query(TB_Card,
                 null,
                 null,
                 null,

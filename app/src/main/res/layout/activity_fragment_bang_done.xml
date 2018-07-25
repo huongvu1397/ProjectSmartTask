@@ -44,11 +44,6 @@
                         android:textStyle="bold"
                         android:maxLines="1" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/logo_main" />
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
         </FrameLayout>

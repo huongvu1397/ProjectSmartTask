@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:text="@string/ten_app"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="30dp"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"/>
         </LinearLayout>
@@ -67,7 +67,7 @@
             android:id="@+id/fab_1"
             android:layout_height="wrap_content"
             style="@style/MenuButtonsSmall"
-            android:src="@android:drawable/ic_input_add"
+            android:src="@drawable/ic_settings_voice"
             fab:fab_size="mini"
             fab:fab_label="Menu item 1" />
 
@@ -76,7 +76,7 @@
             style="@style/MenuButtonsSmall"
             android:id="@+id/fab_2"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_add"
+            android:src="@drawable/ic_panorama"
             fab:fab_size="mini"
             fab:fab_label="Menu item 2" />
 
@@ -85,7 +85,7 @@
             style="@style/MenuButtonsSmall"
             android:id="@+id/fab_3"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_add"
+            android:src="@drawable/ic_action_edit"
             fab:fab_size="mini"
             fab:fab_label="Thêm" />
 

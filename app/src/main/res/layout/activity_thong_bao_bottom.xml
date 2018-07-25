@@ -11,17 +11,16 @@
         android:id="@+id/toolbarthongbao"
         android:background="@color/mauNut"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Thông báo"
-                android:layout_weight="4"
                 android:textColor="@color/mauTrang"
                 android:textSize="30dp"
                 android:gravity="center"

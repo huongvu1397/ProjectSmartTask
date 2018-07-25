@@ -31,9 +31,9 @@
 
             <ImageView
                 android:id="@+id/cardIcon"
-                android:layout_width="30dp"
-                android:src="@android:drawable/ic_input_add"
-                android:layout_height="30dp" />
+                android:layout_width="15dp"
+                android:src="@drawable/ic_mode_edit"
+                android:layout_height="15dp" />
 
         </LinearLayout>
 
