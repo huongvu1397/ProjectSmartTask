@@ -20,13 +20,14 @@ public class BangPagerAdapter extends FragmentPagerAdapter {
             case 0: return new FragmentToDo();
             case 1: return new FragmentDoing();
             case 2: return new FragmentDone();
-            case 3: return new FragmentThem();
+            // phục vụ cho việc thêm danh sách
+            //case 3: return new FragmentThem();
             default: return new FragmentToDo();
         }
     }
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 }

@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.example.a84974.projectsmarttask.UsingCard;
 import com.example.a84974.projectsmarttask.Module.BangList;
 import com.example.a84974.projectsmarttask.R;
+import com.example.a84974.projectsmarttask.UsingCardScroll;
+import com.example.a84974.projectsmarttask.fragment_bang.FragmentToDo;
 
 import java.util.List;
 
@@ -23,20 +25,22 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
     private List<BangList> BangLists;
     private Context context;
     private RecyclerView mRecyclerV;
+    private String tenbang;
 
-    public BangListAdapter(List<BangList> BangLists, Context context,RecyclerView rcView) {
+    public BangListAdapter(List<BangList> BangLists, Context context,RecyclerView rcView,String tenbang) {
         this.context = context;
         this.BangLists = BangLists;
         this.mRecyclerV = rcView;
+        this.tenbang = tenbang;
     }
 
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.item_bang_the,parent,false);
-        return new ViewHolder(itemView);
+            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+            View itemView = inflater.inflate(R.layout.item_bang_the,parent,false);
+            return new ViewHolder(itemView);
     }
 
     @Override
@@ -49,8 +53,10 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
                  holder.cardView.setOnClickListener(new View.OnClickListener() {
                      @Override
                      public void onClick(View view) {
-                                 Intent intent = new Intent(view.getContext(),UsingCard.class);
+
+                         Intent intent = new Intent(view.getContext(),UsingCardScroll.class);
                                  intent.putExtra("title",bg.getTieude());
+                                 intent.putExtra("tenbang",tenbang);
                                  Toast.makeText(view.getContext(), "Hello" + bg.getTieude(), Toast.LENGTH_SHORT).show();
                                  view.getContext().startActivity(intent);
                      }

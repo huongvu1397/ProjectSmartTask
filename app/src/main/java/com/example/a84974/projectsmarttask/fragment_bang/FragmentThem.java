@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.a84974.projectsmarttask.R;
-
+// phục vụ cho việc thêm danh sách
 public class FragmentThem extends Fragment {
 
     @Nullable

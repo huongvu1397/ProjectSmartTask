@@ -39,6 +39,10 @@
         <activity android:name=".ahbottombaractivity.thongBaoBottom" />
         <activity android:name=".ahbottombaractivity.taiKhoanBottom" />
         <activity android:name=".UsingCard" />
+        <activity
+            android:name=".UsingCardScroll"
+            android:label=""
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

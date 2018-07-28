@@ -2,6 +2,7 @@ package com.example.a84974.projectsmarttask.fragment_bang;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -31,12 +32,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentToDo extends Fragment {
+    String tenbang;
     RecyclerView rcView;
     Context context;
     List<BangList> bangLists;
     BangListAdapter bangListAdapter;
-    TextView themthe;
-    String gettieudethe, getmotathe;
+    TextView themthe,TenList;
+    String gettieudethe, getmotathe,tenlist;
     Toolbar tb;
     private Cursor cursor;
     private DatabaseManager manager;
@@ -49,6 +51,12 @@ public class FragmentToDo extends Fragment {
         View view = inflater.inflate(R.layout.activity_fragment_bang_todo, container, false);
         rcView = view.findViewById(R.id.rcViewFBangTodo);
         themthe = view.findViewById(R.id.btnFBangThemTheTodo);
+        TenList = view.findViewById(R.id.textFBangTodo);
+        tenlist = TenList.getText().toString();
+        Intent intent = getActivity().getIntent();
+        tenbang = intent.getStringExtra("tenbang");
+        //Toast.makeText(view.getContext(), "Fragment To Do said"+tenbang, Toast.LENGTH_SHORT).show();
+
         //add item
         tb = view.findViewById(R.id.tbFBangTodo);
         tb.inflateMenu(R.menu.item_menu_inside_tcbang);
@@ -58,10 +66,9 @@ public class FragmentToDo extends Fragment {
 
         bangLists = new ArrayList<>();
         //fakeData();
-        bangListAdapter = new BangListAdapter(bangLists, context,rcView);
+        bangListAdapter = new BangListAdapter(bangLists, context,rcView,tenbang);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(context);
         rcView.setLayoutManager(manager);
-        //rcView.setAdapter(bangListAdapter);
         getCard();
         inDialog();
         return view;
@@ -88,10 +95,10 @@ public class FragmentToDo extends Fragment {
     }
 
 
-    public void fakeData() {
-        bangLists.add(new BangList("Tên thẻ 1"));
-        bangLists.add(new BangList("Tên thẻ 2"));
-    }
+//    public void fakeData() {
+//        bangLists.add(new BangList("Tên thẻ 1"));
+//        bangLists.add(new BangList("Tên thẻ 2"));
+//    }
 
     public void inDialog() {
         themthe.setOnClickListener(new View.OnClickListener() {
@@ -110,9 +117,8 @@ public class FragmentToDo extends Fragment {
                         // su kien nut them the
                         gettieudethe = edtTitle.getText().toString().trim();
                         getmotathe = edtMota.getText().toString().trim();
-                        manager.inserThe(gettieudethe,getmotathe);
+                        manager.inserThe(gettieudethe,getmotathe,tenlist,tenbang);
                         //bangLists.add(new BangList(gettieudethe));
-                        //getCard();
                         dialog.cancel();
                     }
                 });
@@ -121,28 +127,16 @@ public class FragmentToDo extends Fragment {
         });
     }
     public void getCard(){
-        cursor = manager.getCard();
-
-//        simpleCursorAdapter = new SimpleCursorAdapter(getContext(),
-//                R.layout.item_bang_the,
-//                cursor,
-//                new String[]{"TenThe"},
-//                new int[]{R.id.cardTitle});
-//        rcView.setAdapter(simpleCursorAdapter);
+        cursor = manager.getCard(tenlist,tenbang);
         //LOOP AND ADD TO ARRAYLIST
         while(cursor.moveToNext()){
             int id=cursor.getInt(0);
             String name=cursor.getString(1);
             String mota=cursor.getString(2);
-
+            String taglist = cursor.getString(3);
             BangList b = new BangList(name);
             bangLists.add(b);
-            bangListAdapter.notifyDataSetChanged();
         }
-
         rcView.setAdapter(bangListAdapter);
-
-
-
     }
 }

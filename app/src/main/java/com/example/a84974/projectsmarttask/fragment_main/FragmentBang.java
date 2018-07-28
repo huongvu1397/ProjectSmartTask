@@ -12,16 +12,21 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a84974.projectsmarttask.R;
 import com.example.a84974.projectsmarttask.BangPager;
+import com.example.a84974.projectsmarttask.UsingCardScroll;
 import com.example.a84974.projectsmarttask.database.DatabaseManager;
+import com.example.a84974.projectsmarttask.fragment_bang.FragmentToDo;
 
 public class FragmentBang extends Fragment {
     private ListView lstViewcanhan,lstViewnhom;
     private Cursor cursor;
     private DatabaseManager manager;
     private SimpleCursorAdapter simpleCursorAdapter;
+    private String tenbang="";
 
     @Nullable
     @Override
@@ -34,8 +39,11 @@ public class FragmentBang extends Fragment {
             lstViewcanhan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent a = new Intent(getContext(),BangPager.class);
-                    startActivity(a);
+                        Intent a = new Intent(view.getContext(),BangPager.class);
+                        TextView tagText = view.findViewById(R.id.tvTenBang);
+                        String tag = tagText.getText().toString().trim();
+                        a.putExtra("tenbang",tag);
+                        startActivity(a);
 
                 }
             });

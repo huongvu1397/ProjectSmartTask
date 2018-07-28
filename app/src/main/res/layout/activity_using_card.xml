@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UsingCard">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbTCBang"
+        android:background="@color/mauChuDao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/ucTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tenthe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mo Ta"/>
+        <LinearLayout
+            android:weightSum="4"
+            android:orientation="vertical"
+            android:background="@color/mauDoiTrang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_action_edit"/>
+                <TextView
+                    android:textSize="30dp"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Label"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_action_user"/>
+                <TextView
+                    android:textSize="30dp"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Checklist"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_action_calendar_day"/>
+                <TextView
+                    android:id="@+id/ngayhoanthanh"
+                    android:textSize="30dp"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Date"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_check_box"/>
+                <TextView
+                    android:textSize="30dp"
+                    android:gravity="center|left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Checklist"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
