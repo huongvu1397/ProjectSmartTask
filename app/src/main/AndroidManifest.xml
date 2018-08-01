@@ -38,7 +38,6 @@
         <activity android:name=".TaoBang" />
         <activity android:name=".ahbottombaractivity.thongBaoBottom" />
         <activity android:name=".ahbottombaractivity.taiKhoanBottom" />
-        <activity android:name=".UsingCard" />
         <activity
             android:name=".UsingCardScroll"
             android:label=""

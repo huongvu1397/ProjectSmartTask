@@ -2,7 +2,6 @@ package com.example.a84974.projectsmarttask.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -13,11 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.a84974.projectsmarttask.UsingCard;
 import com.example.a84974.projectsmarttask.Module.BangList;
 import com.example.a84974.projectsmarttask.R;
 import com.example.a84974.projectsmarttask.UsingCardScroll;
-import com.example.a84974.projectsmarttask.fragment_bang.FragmentToDo;
 
 import java.util.List;
 

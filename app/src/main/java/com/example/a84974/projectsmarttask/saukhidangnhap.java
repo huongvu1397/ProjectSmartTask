@@ -32,7 +32,7 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
     private MainPagerAdapter pagerAdapter;
     private ArrayList<AHBottomNavigationItem> bottomNavigationItems = new ArrayList<>();
     private FloatingActionMenu fab;
-    private FloatingActionButton fab1,fab2,fab3;
+    private FloatingActionButton fab1, fab2, fab3;
     private FragmentBang fragmentBang;
     private com.example.a84974.projectsmarttask.fragment_main.FragmentVitri FragmentVitri;
     private com.example.a84974.projectsmarttask.fragment_main.FragmentLich FragmentLich;
@@ -58,22 +58,26 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
+
             @Override
             public void onPageSelected(int position) {
-                       if(position==3){
-                           FragmentVitri.init();
-                       }
+                //if(position==3){
+                //   FragmentVitri.init();
+                //}
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
             }
         });
+
+
         fab.setClosedOnTouchOutside(true);
         fab1.setOnClickListener(this);
         fab2.setOnClickListener(this);
@@ -126,27 +130,24 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
             @Override
             public boolean onTabSelected(int position, boolean wasSelected) {
                 //show fragment
-                if(position==0){
+                if (position == 0) {
                     //bottomNavigation.disableItemAtPosition(0);
                     startActivity(new Intent(getApplication(), saukhidangnhap.class));
                     finish();
-                }
-                else if(position==1){
+                } else if (position == 1) {
                     //remove notification wwhen clicked
-                    bottomNavigation.setNotification("",1);
-                    Intent intent = new Intent(getApplication(),thongBaoBottom.class);
+                    bottomNavigation.setNotification("", 1);
+                    Intent intent = new Intent(getApplication(), thongBaoBottom.class);
                     startActivity(intent);
                     //finish();
-                }
-                else if(position==2){
+                } else if (position == 2) {
 
                     startActivity(new Intent(getApplicationContext(), taiKhoanBottom.class));
 
                 }
                 return true;
             }
-        }) ;
-
+        });
 
 
         bottomNavigation.setOnNavigationPositionListener(new AHBottomNavigation.OnNavigationPositionListener() {
@@ -169,8 +170,8 @@ public class saukhidangnhap extends AppCompatActivity implements View.OnClickLis
                 Toast.makeText(saukhidangnhap.this, "hello2", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.fab_3:
-                
-                startActivity(new Intent(this,TaoBang.class));
+
+                startActivity(new Intent(this, TaoBang.class));
                 //fab.set close gi day
                 break;
         }

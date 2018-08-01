@@ -64,6 +64,8 @@ public class FragmentToDo extends Fragment {
         tbClicked(view);
         manager = new DatabaseManager(getContext());
 
+
+
         bangLists = new ArrayList<>();
         //fakeData();
         bangListAdapter = new BangListAdapter(bangLists, context,rcView,tenbang);

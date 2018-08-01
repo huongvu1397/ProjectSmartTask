@@ -32,8 +32,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
                 return FragmentAnh;
             case 2:
                 return FragmentLich;
-            case 3:
-                return FragmentVitri;
+            //case 3:
+                //return FragmentVitri;
             default: return fragmentBang;
         }
     }
@@ -44,7 +44,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 3;
     }
 
     @Nullable
@@ -57,8 +57,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
                 return "Ảnh";
             case 2:
                 return "Lịch";
-            case 3:
-                return "Vị trí";
+            //case 3:
+             //   return "Vị trí";
             default: return "Bảng";
         }
     }

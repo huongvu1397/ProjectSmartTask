@@ -13,7 +13,8 @@ public class DatabaseManager {
     public final String TB_Bang = "bang";
     public final String TB_Card = "card";
     public final String TB_List = "list";
-    public final int DB_VERSION = 5;
+    public final String TB_CongViec = "congviec";
+    public final int DB_VERSION = 7;
     private SQLiteDatabase database;
 
     public class OpenHelper extends SQLiteOpenHelper {
@@ -25,14 +26,17 @@ public class DatabaseManager {
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
             String taoBang = "CREATE TABLE IF NOT EXISTS bang(_id INTEGER PRIMARY KEY AUTOINCREMENT,TenBang TEXT,QuyenXem TEXT,MauNen TEXT)";
             String taoThe = "CREATE TABLE IF NOT EXISTS card(_id INTEGER PRIMARY KEY AUTOINCREMENT,TenThe TEXT,MoTa TEXT,TagList TEXT,TenBang TEXT)";
+            String taoCongViec = "CREATE TABLE IF NOT EXISTS congviec(_id INTEGER PRIMARY KEY AUTOINCREMENT,TenCV TEXT,Title TEXT,TenBang TEXT)";
             sqLiteDatabase.execSQL(taoBang);
             sqLiteDatabase.execSQL(taoThe);
+            sqLiteDatabase.execSQL(taoCongViec);
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS bang");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS card");
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS congviec");
             onCreate(sqLiteDatabase);
         }
 
@@ -45,6 +49,14 @@ public class DatabaseManager {
         values.put("QuyenXem", quyenxem);
         values.put("MauNen", maunen);
         database.insert(TB_Bang, null, values);
+    }
+    //thêm cv
+    public void insertCongViec(String tencv, String title, String tenbang) {
+        ContentValues values = new ContentValues();
+        values.put("TenCV", tencv);
+        values.put("Title", title);
+        values.put("TenBang", tenbang);
+        database.insert(TB_CongViec, null, values);
     }
 
     //them the
@@ -78,6 +90,19 @@ public class DatabaseManager {
         //String[] columns={"id","TenThe","MoTa"};
         String selection = "TagList LIKE"+ "'"+tenlist+"'"+" AND TenBang LIKE"+"'"+tenbang+"'"; //CustomerName LIKE 'a%'
         return database.query(TB_Card,
+                null,
+                selection,
+                null,
+                null,
+                null,
+                null);
+    }
+
+    //getCV
+    public Cursor getCV(String title,String tenbang) {
+        //String[] columns={"id","TenThe","MoTa"};
+        String selection = "Title LIKE"+ "'"+title+"'"+" AND TenBang LIKE"+"'"+tenbang+"'"; //CustomerName LIKE 'a%'
+        return database.query(TB_CongViec,
                 null,
                 selection,
                 null,

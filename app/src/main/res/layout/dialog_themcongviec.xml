@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="200dp">
+
+    <EditText
+        android:hint="Tên công việc"
+        android:id="@+id/edttencv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/mauXanhlaCay"
+        android:layout_gravity="bottom|right"
+        android:textSize="25dp"
+        android:text="Thêm"
+        android:id="@+id/btnThemCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
