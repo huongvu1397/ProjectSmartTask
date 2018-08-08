@@ -41,7 +41,12 @@
         <activity
             android:name=".UsingCardScroll"
             android:label=""
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".bqh.ActivityDangNhap" />
+        <activity android:name=".bqh.SignUp_Activity" />
+        <activity android:name=".bqh.ForgotPW_Activity" />
+        <activity android:name=".bqh.Home_Activity" />
+        <activity android:name=".bqh.ChangePassword_Activity"></activity>
     </application>
 
 </manifest>

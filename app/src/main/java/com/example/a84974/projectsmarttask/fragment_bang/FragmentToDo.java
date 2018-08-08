@@ -18,8 +18,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,10 +42,12 @@ public class FragmentToDo extends Fragment {
     TextView themthe,TenList;
     String gettieudethe, getmotathe,tenlist;
     Toolbar tb;
+    private String tenMoveBang;
+    private Cursor cursorSpin;
     private Cursor cursor;
     private DatabaseManager manager;
     private SimpleCursorAdapter simpleCursorAdapter;
-
+    private SimpleCursorAdapter adapterSpinBang;
 
     @Nullable
     @Override
@@ -64,8 +68,6 @@ public class FragmentToDo extends Fragment {
         tbClicked(view);
         manager = new DatabaseManager(getContext());
 
-
-
         bangLists = new ArrayList<>();
         //fakeData();
         bangListAdapter = new BangListAdapter(bangLists, context,rcView,tenbang);
@@ -82,9 +84,12 @@ public class FragmentToDo extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
+                    //move list
                     case R.id.moveItemList:
+                        moveListDialog();
                         Toast.makeText(view.getContext(), "Move List", Toast.LENGTH_SHORT).show();
                         return true;
+                    //delete list
                     case R.id.moveItemList2:
                         Toast.makeText(view.getContext(), "Delete List", Toast.LENGTH_SHORT).show();
                         return true;
@@ -128,6 +133,45 @@ public class FragmentToDo extends Fragment {
             }
         });
     }
+
+    public void moveListDialog(){
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.dialog_move_list);
+        TextView movelist = dialog.findViewById(R.id.action_move_list);
+        Spinner spinlistbang = dialog.findViewById(R.id.spin_move_list_bang);
+        cursorSpin = manager.getBang();
+
+        adapterSpinBang = new SimpleCursorAdapter(
+                getContext(),
+                android.R.layout.simple_spinner_item,
+                cursorSpin,
+                new String[]{"TenBang"},
+                new int[]{android.R.id.text1});
+        spinlistbang.setAdapter(adapterSpinBang);
+        spinlistbang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                Cursor cursor = (Cursor) parent.getItemAtPosition(position);
+                tenMoveBang = cursor.getString(1);
+                Toast.makeText(view.getContext(), ""+tenMoveBang, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        movelist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Move thanh cong", Toast.LENGTH_SHORT).show();
+                dialog.cancel();
+            }
+        });
+        dialog.show();
+    }
+
     public void getCard(){
         cursor = manager.getCard(tenlist,tenbang);
         //LOOP AND ADD TO ARRAYLIST

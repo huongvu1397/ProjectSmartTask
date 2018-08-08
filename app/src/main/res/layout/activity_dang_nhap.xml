@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mauChuDao"
+        android:orientation="vertical"
+        tools:context=".bqh.ActivityDangNhap">
+
+        <ImageView
+            android:id="@+id/imgAva"
+            android:layout_width="match_parent"
+            android:layout_height="178dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/logomain2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Are you ready for preparing the job?"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape"
+            android:drawableLeft="@drawable/icons8_secured_letter_242"
+            android:hint="   Email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingLeft="14dp"
+            android:singleLine="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtPassWord"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="9"
+                android:background="@drawable/shape_left"
+                android:drawableLeft="@drawable/icons8_lock_32"
+                android:focusableInTouchMode="true"
+                android:hint="  Password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+
+            <ImageButton
+                android:id="@+id/ibtShowPW"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_right"
+                android:onClick="ibtShowPW"
+                android:src="@drawable/icons8_eye_24" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbRemember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text=" Remember me?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btSignIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape"
+                android:onClick="btSignIn"
+                android:text="Sign In"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btSignUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape"
+                android:onClick="btSignUp"
+                android:text="Sign Up"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:drawableRight="@drawable/icons8_forgot_password_16"
+            android:onClick="tvForgot"
+            android:text="Forgot password "
+            android:textStyle="bold" />
+
+
+    </LinearLayout>

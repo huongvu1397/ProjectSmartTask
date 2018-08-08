@@ -10,127 +10,138 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/mota"
-        android:textSize="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Mo Ta"/>
-    <LinearLayout
-        android:orientation="vertical"
-        android:background="@color/mauChuDao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!--<LinearLayout-->
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mo Ta"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mauChuDao"
+            android:orientation="vertical">
+            <!--<LinearLayout-->
             <!--android:layout_width="match_parent"-->
             <!--android:orientation="horizontal"-->
             <!--android:layout_height="wrap_content">-->
             <!--<ImageView-->
-                <!--android:layout_width="50dp"-->
-                <!--android:layout_height="50dp"-->
-                <!--android:src="@drawable/ic_action_edit"/>-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/ic_action_edit"/>-->
             <!--<TextView-->
-                <!--android:textSize="20dp"-->
-                <!--android:gravity="center|left"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:text="Label"-->
-                <!--/>-->
-        <!--</LinearLayout>-->
+            <!--android:textSize="20dp"-->
+            <!--android:gravity="center|left"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:text="Label"-->
+            <!--/>-->
+            <!--</LinearLayout>-->
 
-        <!--<LinearLayout-->
+            <!--<LinearLayout-->
             <!--android:layout_width="match_parent"-->
             <!--android:orientation="horizontal"-->
             <!--android:layout_height="wrap_content">-->
             <!--<ImageView-->
-                <!--android:layout_width="50dp"-->
-                <!--android:layout_height="50dp"-->
-                <!--android:src="@drawable/ic_action_user"/>-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@drawable/ic_action_user"/>-->
             <!--<TextView-->
-                <!--android:textSize="20dp"-->
-                <!--android:gravity="center|left"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:text="User"-->
-                <!--/>-->
-        <!--</LinearLayout>-->
+            <!--android:textSize="20dp"-->
+            <!--android:gravity="center|left"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:text="User"-->
+            <!--/>-->
+            <!--</LinearLayout>-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_action_calendar_day"/>
-            <TextView
-                android:id="@+id/ngayhoanthanh"
-                android:textSize="20dp"
-                android:gravity="center|left"
-                android:textColor="@color/mauTrang"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Date..."
-                />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
             <LinearLayout
-                android:id="@+id/checklist"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_check_box"/>
-            <TextView
-                android:textColor="@color/mauTrang"
-                android:textSize="20dp"
-                android:gravity="center|left"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Checklist"
-                />
-            </LinearLayout>
-            <ListView
-                android:id="@+id/listviewCV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            </ListView>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_action_calendar_day" />
+
+                <TextView
+                    android:id="@+id/ngayhoanthanh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:text="Date..."
+                    android:textColor="@color/mauTrang"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/checklist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_check_box" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="Checklist"
+                        android:textColor="@color/mauTrang"
+                        android:textSize="20dp" />
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/listviewCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+                    <!--how to set height lisst view-->
+                </ListView>
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
-    </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <ImageView
-                android:layout_gravity="center"
                 android:layout_width="20dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_chat"/>
+                android:layout_gravity="center"
+                android:src="@drawable/ic_chat" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Add Comment"
-                />
+                android:hint="Add Comment" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-               <TextView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:text="Hello World"
-                   />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello World" />
         </LinearLayout>
 
     </LinearLayout>

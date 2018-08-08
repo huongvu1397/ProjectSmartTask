@@ -119,4 +119,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_home">Home</string>
+    <string name="facebook_app_id">2117233231869262</string>
+    <string name="warning">(*)Please make sure that your email is right to receive the verification email</string>
 </resources>

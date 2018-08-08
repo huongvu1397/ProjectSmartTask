@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    android:layout_width="350dp"
+    android:layout_width="300dp"
     android:layout_height="200dp">
 
     <TextView
@@ -10,7 +10,7 @@
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Move Card"/>
+        android:text="Move List"/>
     <TextView
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -20,26 +20,15 @@
     <Spinner
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/spin_move_card_bang"
+        android:id="@+id/spin_move_list_bang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </Spinner>
-    <TextView
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="List"/>
-    <Spinner
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/spin_move_card_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </Spinner>
+
+
     <TextView
         android:layout_marginLeft="10dp"
-        android:id="@+id/action_move_card"
+        android:id="@+id/action_move_list"
         android:textSize="20dp"
         android:textColor="@color/mauXanhlaCay"
         android:text="Move"

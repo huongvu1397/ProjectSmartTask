@@ -10,4 +10,9 @@
     <color name="mauDen">#000</color>
     <color name="mauDoiTrang">#cccccc</color>
     <color name="mauXanhlaCay">#0f0</color>
+
+
+    <color name="btCreate">#4ded3b</color>
+    <color name="white">#ffffff</color>
+    <color name="create">#b3f7fc</color>
 </resources>

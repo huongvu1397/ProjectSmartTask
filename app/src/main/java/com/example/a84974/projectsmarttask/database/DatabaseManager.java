@@ -12,9 +12,8 @@ public class DatabaseManager {
     public final String DB_NAME = "quanlybang";
     public final String TB_Bang = "bang";
     public final String TB_Card = "card";
-    public final String TB_List = "list";
     public final String TB_CongViec = "congviec";
-    public final int DB_VERSION = 7;
+    public final int DB_VERSION = 8;
     private SQLiteDatabase database;
 
     public class OpenHelper extends SQLiteOpenHelper {
@@ -69,8 +68,11 @@ public class DatabaseManager {
         database.insert(TB_Card, null, values);
     }
 
-    //xoa bang
-    public void deleteBang() {
+    //delete
+    public void deleteBang(String tenbang) {
+        database.delete(TB_Bang, "TenBang LIKE " +"'"+tenbang+"'" , null);
+        database.delete(TB_Card,"TenBang LIKE " +"'"+tenbang+"'" , null);
+        database.delete(TB_CongViec,"TenBang LIKE " +"'"+tenbang+"'" , null);
 
     }
 
