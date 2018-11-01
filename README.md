@@ -4,13 +4,10 @@
 # Nombre de producto
 > Breve descripción de lo que hace tu producto.
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 Uno o dos párrafos sobre tu producto y el problema que resuelve.
 
-![](../header.png)
+![In a single picture](https://raw.githubusercontent.com/shadmazumder/Xcode/master/InOnePicture.png)
  
 ## Instalación
  
