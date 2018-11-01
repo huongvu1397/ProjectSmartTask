@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".fragment_main.FragmentBang">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/txtView1"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:text="Bảng cá nhân"
-        android:textSize="20dp"/>
+        android:textColor="@color/mauDen"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold" />
+
     <ListView
         android:id="@+id/lstViewCaNhan"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        ></ListView>
+        android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
     <TextView
+        android:id="@+id/txtBang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bảng nhóm"
-        android:textStyle="bold"
-        android:textSize="20dp"/>
-    <ListView
-        android:id="@+id/lstViewNhom"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:entries="@array/demo_array"
-        ></ListView>
+        android:text="Không có bảng !"
+        android:textSize="@dimen/text_title"
+        android:layout_centerInParent="true"
+        android:textColor="@color/mauDen"
+        />
 
-
-
-</LinearLayout>
+</RelativeLayout>

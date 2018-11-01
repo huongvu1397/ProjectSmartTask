@@ -1,48 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
     android:layout_margin="10dp"
-    android:layout_width="350dp"
-    android:layout_height="200dp">
+    android:background="@drawable/dialog_custom_"
+    android:minWidth="250dp"
+    android:orientation="vertical">
 
     <TextView
-        android:textStyle="bold"
-        android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Move Card"/>
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Chuyển thẻ"
+        android:textColor="@color/mauDen"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold" />
+
     <TextView
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bảng"/>
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Bảng"
+        android:textColor="@color/mauDen"
+        android:textSize="@dimen/text_normal" />
+
     <Spinner
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:id="@+id/spin_move_card_bang"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </Spinner>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"></Spinner>
+
     <TextView
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List"/>
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="List"
+        android:textColor="@color/mauDen"
+        android:textSize="@dimen/text_normal" />
+
     <Spinner
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:id="@+id/spin_move_card_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </Spinner>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"></Spinner>
+
     <TextView
-        android:layout_marginLeft="10dp"
         android:id="@+id/action_move_card"
-        android:textSize="20dp"
-        android:textColor="@color/mauXanhlaCay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape2"
+        android:gravity="center"
         android:text="Move"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/mauTrang"
+        android:textSize="@dimen/text_title" />
 </LinearLayout>

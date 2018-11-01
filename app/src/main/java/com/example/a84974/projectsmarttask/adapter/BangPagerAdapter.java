@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.a84974.projectsmarttask.fragment_bang.FragmentDoing;
 import com.example.a84974.projectsmarttask.fragment_bang.FragmentDone;
-import com.example.a84974.projectsmarttask.fragment_bang.FragmentThem;
 import com.example.a84974.projectsmarttask.fragment_bang.FragmentToDo;
 
 public class BangPagerAdapter extends FragmentPagerAdapter {
@@ -20,8 +19,6 @@ public class BangPagerAdapter extends FragmentPagerAdapter {
             case 0: return new FragmentToDo();
             case 1: return new FragmentDoing();
             case 2: return new FragmentDone();
-            // phục vụ cho việc thêm danh sách
-            //case 3: return new FragmentThem();
             default: return new FragmentToDo();
         }
     }

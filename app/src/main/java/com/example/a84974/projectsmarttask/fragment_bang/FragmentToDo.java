@@ -1,17 +1,21 @@
 package com.example.a84974.projectsmarttask.fragment_bang;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,20 +38,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentToDo extends Fragment {
-    String tenbang;
-    RecyclerView rcView;
-    Context context;
-    List<BangList> bangLists;
-    BangListAdapter bangListAdapter;
-    TextView themthe,TenList;
-    String gettieudethe, getmotathe,tenlist;
-    Toolbar tb;
-    private String tenMoveBang;
-    private Cursor cursorSpin;
-    private Cursor cursor;
+    private String tenbang, tenMoveBang, gettieudethe, getmotathe, tenlist;
+    private int idbang;
+    private RecyclerView rcView;
+    private Context context;
+    private List<BangList> bangLists;
+    private BangListAdapter bangListAdapter;
+    private TextView themthe, TenList;
+    private Toolbar tb;
+    private Cursor cursor, cursorXoaDS;
     private DatabaseManager manager;
-    private SimpleCursorAdapter simpleCursorAdapter;
-    private SimpleCursorAdapter adapterSpinBang;
 
     @Nullable
     @Override
@@ -57,23 +57,23 @@ public class FragmentToDo extends Fragment {
         themthe = view.findViewById(R.id.btnFBangThemTheTodo);
         TenList = view.findViewById(R.id.textFBangTodo);
         tenlist = TenList.getText().toString();
+        manager = new DatabaseManager(getContext());
+        //lấy tên bảng, id bảng
         Intent intent = getActivity().getIntent();
         tenbang = intent.getStringExtra("tenbang");
-        //Toast.makeText(view.getContext(), "Fragment To Do said"+tenbang, Toast.LENGTH_SHORT).show();
-
-        //add item
+        idbang = intent.getIntExtra("idbang", 0);
+        //add item toolbar
         tb = view.findViewById(R.id.tbFBangTodo);
         tb.inflateMenu(R.menu.item_menu_inside_tcbang);
-        //Menu menu = tb.getMenu();
         tbClicked(view);
-        manager = new DatabaseManager(getContext());
-
+        //add item rcview
         bangLists = new ArrayList<>();
-        //fakeData();
-        bangListAdapter = new BangListAdapter(bangLists, context,rcView,tenbang);
+        bangListAdapter = new BangListAdapter(bangLists, context, rcView, tenbang, tenlist,String.valueOf(idbang));
         RecyclerView.LayoutManager manager = new LinearLayoutManager(context);
         rcView.setLayoutManager(manager);
+        //hiển thị thẻ
         getCard();
+        // thêm thẻ
         inDialog();
         return view;
     }
@@ -84,14 +84,38 @@ public class FragmentToDo extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    //move list
-                    case R.id.moveItemList:
-                        moveListDialog();
-                        Toast.makeText(view.getContext(), "Move List", Toast.LENGTH_SHORT).show();
-                        return true;
                     //delete list
                     case R.id.moveItemList2:
-                        Toast.makeText(view.getContext(), "Delete List", Toast.LENGTH_SHORT).show();
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                        builder.setTitle("Xóa danh sách");
+                        builder.setMessage("Bạn có muốn xóa danh sách không ?");
+                        builder.setCancelable(false);
+                        builder.setPositiveButton("Không", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        });
+                        builder.setNegativeButton("Đồng ý", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                // xóa tất cả thẻ trong danh sách
+                                cursorXoaDS = manager.getCard(tenlist, String.valueOf(idbang));
+                                while (cursorXoaDS.moveToNext()) {
+                                    int id = cursorXoaDS.getInt(0);
+                                    manager.deleteThe(id);
+                                    manager.deleteLich(String.valueOf(id));
+                                    manager.deleteCVbyThe(String.valueOf(id));
+                                }
+
+                                getCard();
+                            }
+                        });
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
+
+
+
                         return true;
                     default:
                         break;
@@ -102,17 +126,12 @@ public class FragmentToDo extends Fragment {
     }
 
 
-//    public void fakeData() {
-//        bangLists.add(new BangList("Tên thẻ 1"));
-//        bangLists.add(new BangList("Tên thẻ 2"));
-//    }
-
+    //dialog them the
     public void inDialog() {
         themthe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Dialog dialog = new Dialog(getContext());
-                dialog.setTitle("Thêm thẻ");
                 dialog.setCancelable(true);
                 dialog.setContentView(R.layout.diaglog_themthe);
                 EditText edtTitle = dialog.findViewById(R.id.tieudethe);
@@ -121,11 +140,11 @@ public class FragmentToDo extends Fragment {
                 themThe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view1) {
-                        // su kien nut them the
+                        // thêm thẻ cho danh sách
                         gettieudethe = edtTitle.getText().toString().trim();
                         getmotathe = edtMota.getText().toString().trim();
-                        manager.inserThe(gettieudethe,getmotathe,tenlist,tenbang);
-                        //bangLists.add(new BangList(gettieudethe));
+                        manager.inserThe(gettieudethe, getmotathe, tenlist, tenbang, String.valueOf(idbang));
+                        getCard();
                         dialog.cancel();
                     }
                 });
@@ -134,55 +153,29 @@ public class FragmentToDo extends Fragment {
         });
     }
 
-    public void moveListDialog(){
-        Dialog dialog = new Dialog(getContext());
-        dialog.setContentView(R.layout.dialog_move_list);
-        TextView movelist = dialog.findViewById(R.id.action_move_list);
-        Spinner spinlistbang = dialog.findViewById(R.id.spin_move_list_bang);
-        cursorSpin = manager.getBang();
 
-        adapterSpinBang = new SimpleCursorAdapter(
-                getContext(),
-                android.R.layout.simple_spinner_item,
-                cursorSpin,
-                new String[]{"TenBang"},
-                new int[]{android.R.id.text1});
-        spinlistbang.setAdapter(adapterSpinBang);
-        spinlistbang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
-                Cursor cursor = (Cursor) parent.getItemAtPosition(position);
-                tenMoveBang = cursor.getString(1);
-                Toast.makeText(view.getContext(), ""+tenMoveBang, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        movelist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Move thanh cong", Toast.LENGTH_SHORT).show();
-                dialog.cancel();
-            }
-        });
-        dialog.show();
-    }
-
-    public void getCard(){
-        cursor = manager.getCard(tenlist,tenbang);
+    // hiển thị thẻ
+    public void getCard() {
+        cursor = manager.getCard(tenlist, String.valueOf(idbang));
         //LOOP AND ADD TO ARRAYLIST
-        while(cursor.moveToNext()){
-            int id=cursor.getInt(0);
-            String name=cursor.getString(1);
-            String mota=cursor.getString(2);
-            String taglist = cursor.getString(3);
-            BangList b = new BangList(name);
-            bangLists.add(b);
+        if(bangLists==null) {
+            while (cursor.moveToNext()) {
+                int idthe = cursor.getInt(0);
+                String name = cursor.getString(1);
+                BangList b = new BangList(String.valueOf(idthe), name);
+                bangLists.add(b);
+            }
+            rcView.setAdapter(bangListAdapter);
+        }else{
+            bangLists.clear();
+            while (cursor.moveToNext()) {
+                int idthe = cursor.getInt(0);
+                String name = cursor.getString(1);
+                BangList b = new BangList(String.valueOf(idthe), name);
+                bangLists.add(b);
+            }
+            rcView.setAdapter(bangListAdapter);
         }
-        rcView.setAdapter(bangListAdapter);
     }
+
 }

@@ -5,11 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment_main.FragmentAnh">
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:id="@+id/rcViewAnh"
-        android:scrollbars="vertical"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
+    <ListView
+        android:layout_margin="5dp"
+        android:id="@+id/lvImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+    <TextView
+        android:id="@+id/txtAnh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Không có ảnh !"
+        android:textSize="@dimen/text_title"
+        android:layout_centerInParent="true"
+        android:textColor="@color/mauDen"
+        />
 
 </RelativeLayout>

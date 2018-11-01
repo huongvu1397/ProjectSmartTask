@@ -3,100 +3,88 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relacontent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relacontent"
     tools:context=".saukhidangnhap">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarSaukhiDN"
-        android:background="#0091EA"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="#0091EA">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
-                android:text="@string/ten_app"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
                 android:layout_gravity="center"
-                android:textColor="#ffffff"/>
+                android:text="@string/ten_app"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/logo_text" />
         </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
 
-
     <android.support.design.widget.TabLayout
-        android:layout_below="@id/toolbarSaukhiDN"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:tabMode="fixed"
-        app:tabGravity="fill">
-    </android.support.design.widget.TabLayout>
+        android:layout_below="@id/toolbarSaukhiDN"
+        app:tabGravity="fill"
+        app:tabMode="fixed"></android.support.design.widget.TabLayout>
+
     <android.support.v4.view.ViewPager
-        android:layout_below="@id/tabLayout"
         android:id="@+id/viewPager"
-        android:layout_above="@id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v4.view.ViewPager>
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNavigationView"
+        android:layout_below="@id/tabLayout"></android.support.v4.view.ViewPager>
+
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu_fab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
         android:layout_above="@id/bottomNavigationView"
-        android:paddingRight="10dp"
+        android:layout_alignParentRight="true"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
-        fab:menu_labels_ellipsize="end"
-        fab:menu_labels_singleLine="true"
+        android:paddingRight="10dp"
         app:menu_colorNormal="@color/mauChuDao"
         app:menu_colorPressed="@color/mauNut"
         app:menu_colorRipple="@color/mauChuDao"
         fab:menu_backgroundColor="#ccffffff"
-        >
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true">
+
 
         <com.github.clans.fab.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:id="@+id/fab_1"
-            android:layout_height="wrap_content"
-            style="@style/MenuButtonsSmall"
-            android:src="@drawable/ic_settings_voice"
-            fab:fab_size="mini"
-            fab:fab_label="Menu item 1" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:layout_width="wrap_content"
-            style="@style/MenuButtonsSmall"
             android:id="@+id/fab_2"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_panorama"
-            fab:fab_size="mini"
-            fab:fab_label="Menu item 2" />
+            fab:fab_label="Thêm ảnh"
+            fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:layout_width="wrap_content"
-            style="@style/MenuButtonsSmall"
             android:id="@+id/fab_3"
+            style="@style/MenuButtonsSmall"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_action_edit"
-            fab:fab_size="mini"
-            fab:fab_label="Thêm" />
+            fab:fab_label="Thêm bảng"
+            fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
-    <include layout="@layout/navigation_bottombar"/>
 
-         <!--<com.aurelhubert.ahbottomnavigation.AHBottomNavigation-->
-             <!--android:id="@+id/bottomNavigationView"-->
-             <!--android:layout_alignParentBottom="true"-->
-             <!--android:layout_width="match_parent"-->
-             <!--android:layout_height="50dp">-->
-         <!--</com.aurelhubert.ahbottomnavigation.AHBottomNavigation>-->
+    <include layout="@layout/navigation_bottombar" />
+
 
 </RelativeLayout>

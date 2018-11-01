@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,15 +23,22 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
     private List<BangList> BangLists;
     private Context context;
     private RecyclerView mRecyclerV;
-    private String tenbang;
+    private String tenbang,tenlist,idbang;
 
-    public BangListAdapter(List<BangList> BangLists, Context context,RecyclerView rcView,String tenbang) {
+    public BangListAdapter(List<BangList> BangLists, Context context,RecyclerView rcView,String tenbang,String tenlist,String idbang) {
         this.context = context;
         this.BangLists = BangLists;
         this.mRecyclerV = rcView;
         this.tenbang = tenbang;
+        this.tenlist = tenlist;
+        this.idbang = idbang;
     }
 
+    public BangListAdapter(List<BangList> bangLists, Context context, RecyclerView mRecyclerV) {
+        BangLists = bangLists;
+        this.context = context;
+        this.mRecyclerV = mRecyclerV;
+    }
 
     @NonNull
     @Override
@@ -42,9 +50,8 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-                 //
-                 BangList bg = BangLists.get(position);
 
+                 BangList bg = BangLists.get(position);
                  holder.tvTieude.setText(bg.getTieude());
 
                  holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +59,11 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
                      public void onClick(View view) {
 
                          Intent intent = new Intent(view.getContext(),UsingCardScroll.class);
-                                 intent.putExtra("title",bg.getTieude());
-                                 intent.putExtra("tenbang",tenbang);
-                                 Toast.makeText(view.getContext(), "Hello" + bg.getTieude(), Toast.LENGTH_SHORT).show();
+                                 intent.putExtra("titleBLA",bg.getTieude());
+                                 intent.putExtra("tenbangBLA",tenbang);
+                                 intent.putExtra("tenlistBLA",tenlist);
+                                 intent.putExtra("idtheBLA",bg.getIdthe().toString());
+                                 intent.putExtra("idbangBLA",idbang);
                                  view.getContext().startActivity(intent);
                      }
                  });
@@ -67,8 +76,8 @@ public class BangListAdapter extends RecyclerView.Adapter<BangListAdapter.ViewHo
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tvTieude;
-        ImageView imgIcon;
+        public TextView tvTieude;
+        public ImageView imgIcon;
         public CardView cardView;
 
         public ViewHolder(View itemView) {

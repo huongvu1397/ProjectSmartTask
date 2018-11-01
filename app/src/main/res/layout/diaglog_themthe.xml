@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="300dp"
-    android:layout_height="200dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/dialog_custom_"
+    android:minWidth="250dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Thêm thẻ"
+        android:textColor="@color/mauDen"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold" />
 
     <EditText
-        android:hint="Tiêu đề"
         android:id="@+id/tieudethe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:hint="Tiêu đề"
+        android:maxLines="1"
+        android:textColor="@color/mauDen" />
+
     <EditText
-        android:hint="Mô tả"
         android:id="@+id/motathe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="Mô tả"
+        android:maxLines="1"
+        android:textColor="@color/mauDen" />
+
     <TextView
-        android:textColor="@color/mauXanhlaCay"
-        android:layout_gravity="bottom|right"
-        android:textSize="25dp"
-        android:text="Thêm"
         android:id="@+id/btnThem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape2"
+        android:gravity="center"
         android:onClick="trove"
-        />
+        android:text="Thêm"
+        android:textColor="@color/mauTrang"
+        android:textSize="@dimen/text_title" />
 
 </LinearLayout>

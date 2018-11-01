@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment_bang.FragmentDone">
-    <LinearLayout
-        android:orientation="vertical"
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_height="wrap_content">
+        android:background="@drawable/custom_list"
+        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <android.support.v7.widget.Toolbar
-                android:layout_gravity="center"
                 android:id="@+id/tbFBangDone"
-                android:background="@color/mauDoiTrang"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="45dp"
+                android:layout_gravity="center">
 
                 <LinearLayout
                     android:id="@+id/lnFBangTopDone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:background="@color/mauDoiTrang"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textFBangDone"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="5"
-                        android:textColor="@color/mauDen"
-                        android:textSize="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:maxLines="1"
                         android:text="Done"
-                        android:textStyle="bold"
-                        android:maxLines="1" />
+                        android:textColor="@color/mauDen"
+                        android:textSize="@dimen/text_title"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
@@ -51,33 +51,38 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="1.0">
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rcViewFBangDone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/mauNut"
-                android:paddingBottom="30dp"
-                android:minHeight="48dp"
+                android:background="@color/mauDoiTrang"
                 android:clipToPadding="false"
-                >
+                android:minHeight="48dp"
+                android:paddingBottom="15dp">
 
             </android.support.v7.widget.RecyclerView>
         </FrameLayout>
+
         <FrameLayout
-            android:descendantFocusability="afterDescendants"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.0"
-            android:layout_height="wrap_content">
+            android:descendantFocusability="afterDescendants">
+
             <TextView
                 android:id="@+id/btnFBangThemTheDone"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/mauDoiTrang"
                 android:text="Thêm thẻ"
                 android:textAlignment="center"
-                android:textColor="@color/mauChuDao"
-                android:textSize="20dp" />
+                android:textColor="@color/mauDen"
+                android:textSize="@dimen/text_title" />
         </FrameLayout>
 
     </LinearLayout>

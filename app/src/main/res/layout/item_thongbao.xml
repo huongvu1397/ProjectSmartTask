@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/cardViewItemTB"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/mauTrang"
+    android:layout_marginTop="3dp"
     app:cardElevation="10dp">
     <LinearLayout
         android:layout_margin="8dp"
@@ -17,7 +19,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/icon_bell_r" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

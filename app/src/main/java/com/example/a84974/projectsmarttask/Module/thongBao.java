@@ -1,7 +1,23 @@
 package com.example.a84974.projectsmarttask.Module;
 
 public class thongBao {
-    private String ava,name,comment;
+    private String ava,name,comment,idThe,milis;
+
+    public String getIdThe() {
+        return idThe;
+    }
+
+    public String getMilis() {
+        return milis;
+    }
+
+    public void setMilis(String milis) {
+        this.milis = milis;
+    }
+
+    public void setIdThe(String idThe) {
+        this.idThe = idThe;
+    }
 
     public String getAva() {
         return ava;
@@ -27,10 +43,12 @@ public class thongBao {
         this.comment = comment;
     }
 
-    public thongBao(String name, String comment, String ava) {
+    public thongBao(String idThe ,String name, String comment, String ava,String milis) {
         this.ava = ava;
         this.name = name;
         this.comment = comment;
+        this.idThe = idThe;
+        this.milis = milis;
     }
 
 }

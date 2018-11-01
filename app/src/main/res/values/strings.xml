@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">SmartTask</string>
     <string name="ten_app">SmartTask</string>
-    <string name="textMain">Chào bạn nhỏ!</string>
-    <string name="textMain2">Bạn đã sẵn sàng thực hiện công việc \n \t \t \t \t \t \t \t \t chưa?</string>
+    <string name="textMain">Chào bạn !</string>
+    <string name="textMain2">Bạn đã sẵn sàng thực hiện công việc</string>
+    <string name="textMain3">chưa?</string>
     <string name="title_home">Trang chủ</string>
     <string name="title_noti">Thông báo</string>
     <string name="title_user">Tài khoản</string>
@@ -119,7 +120,7 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
-
+    <string name="txt_offlinemode"><u>Offline</u></string>
     <string name="title_activity_home">Home</string>
     <string name="facebook_app_id">2117233231869262</string>
     <string name="warning">(*)Please make sure that your email is right to receive the verification email</string>

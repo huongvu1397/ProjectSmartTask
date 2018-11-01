@@ -11,35 +11,30 @@ import com.example.a84974.projectsmarttask.fragment_main.FragmentLich;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
     private FragmentBang fragmentBang;
-    private com.example.a84974.projectsmarttask.fragment_main.FragmentVitri FragmentVitri;
     private FragmentLich FragmentLich;
     private FragmentAnh FragmentAnh;
-    public MainPagerAdapter(FragmentManager fm, FragmentBang fragmentBang, FragmentAnh FragmentAnh, FragmentLich FragmentLich, com.example.a84974.projectsmarttask.fragment_main.FragmentVitri FragmentVitri) {
+
+    public MainPagerAdapter(FragmentManager fm, FragmentBang fragmentBang, FragmentAnh FragmentAnh, FragmentLich FragmentLich) {
         super(fm);
         this.FragmentAnh = FragmentAnh;
         this.fragmentBang = fragmentBang;
-        this.FragmentVitri = FragmentVitri;
         this.FragmentLich = FragmentLich;
     }
 
     @Override
     public Fragment getItem(int position) {
-        switch (position)
-        {
+        switch (position) {
             case 0:
                 return fragmentBang;
             case 1:
                 return FragmentAnh;
             case 2:
                 return FragmentLich;
-            //case 3:
-                //return FragmentVitri;
-            default: return fragmentBang;
+
+            default:
+                return fragmentBang;
         }
     }
-
-
-
 
 
     @Override
@@ -50,16 +45,15 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch(position){
+        switch (position) {
             case 0:
                 return "Bảng";
             case 1:
                 return "Ảnh";
             case 2:
                 return "Lịch";
-            //case 3:
-             //   return "Vị trí";
-            default: return "Bảng";
+            default:
+                return "Bảng";
         }
     }
 }

@@ -1,83 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/mauChuDao">
+    android:background="@color/mauChuDao"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="@string/ten_app"
-        android:textSize="30dp"
-        android:layout_gravity="center"
-        android:textColor="@color/mauTrang"
         android:textAllCaps="true"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"/>
+        android:textColor="@color/mauTrang"
+        android:textSize="@dimen/logo_text"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="@string/textMain"
-        android:layout_gravity="center"
         android:textColor="@color/mauTrang"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        />
+        android:textStyle="bold" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/mauTrang"
         android:layout_marginTop="10dp"
         android:text="@string/textMain2"
-        />
+        android:textColor="@color/mauTrang" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/textMain3"
+        android:textColor="@color/mauTrang" />
     <RelativeLayout
-        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
         <ImageView
-            android:src="@drawable/logo_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <Button
+            android:id="@+id/mainX"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="10dp"
-            android:background="@color/mauNut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đăng Ký"
-            android:textColor="@color/mauTrang"
-            android:onClick="xulydangky"
-            />
-        <Button
-            android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-
-            android:background="@color/mauNut"
-            android:layout_width="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/xxxasd" />
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đăng Nhập"
-            android:textColor="@color/mauTrang"
-            android:onClick="xulydangnhap"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Test"
             android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:onClick="saukhidangnhap"
-            />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:onClick="saukhidangnhap"
+                android:text="Bắt đầu"
+                android:textColor="@color/mauTrang"
+                android:textSize="26sp" />
+        </LinearLayout>
     </RelativeLayout>
-
-
 </LinearLayout>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardViewItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:id="@+id/cardViewItem"
+    android:layout_margin="3dp"
     app:cardBackgroundColor="@color/mauTrang"
+    app:cardCornerRadius="3dp"
     app:cardElevation="10dp">
+
     <LinearLayout
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,18 +22,19 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_gravity="top"
-                android:textColor="@color/mauDen"
                 android:id="@+id/cardTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Title Card" />
+                android:layout_gravity="top"
+                android:text="Title Card"
+                android:textColor="@color/mauDen"
+                android:textSize="@dimen/text_normal" />
 
             <ImageView
                 android:id="@+id/cardIcon"
                 android:layout_width="15dp"
-                android:src="@drawable/ic_mode_edit"
-                android:layout_height="15dp" />
+                android:layout_height="15dp"
+                android:src="@drawable/ic_mode_edit" />
 
         </LinearLayout>
 

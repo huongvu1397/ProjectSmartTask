@@ -1,111 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mauTrang"
+    android:orientation="vertical"
     tools:context=".TaoBang">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/mauNut"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@color/mauChuDao"
+        android:theme="@style/ToolBarTheme.ToolBarStyle">
+
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_keyboard_backspace"
-                android:onClick="trove"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Bảng"
-                android:textColor="@color/mauTrang"
-                android:layout_weight="4"
-                android:textSize="30dp"
-                android:gravity="center"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/btnshape"
+                android:onClick="taomoibang"
                 android:text="Tạo mới"
-                android:textSize="20dp"
-                android:layout_weight="2"
-                android:gravity="center"
                 android:textColor="@color/mauTrang"
-                android:onClick="taomoibang"/>
+                android:textSize="@dimen/text_title" />
 
         </LinearLayout>
 
 
     </android.support.v7.widget.Toolbar>
+
     <LinearLayout
-        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="8dp"
         android:orientation="vertical">
+
         <LinearLayout
-            android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Tên"/>
-        <EditText
-            android:id="@+id/editTenBang"
-            android:maxLines="1"
-            android:layout_width="match_parent"
-            android:hint="Bảng mới"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-        <LinearLayout
             android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Quyền xem"/>
+                android:layout_gravity="center"
+                android:text="Tên bảng"
+                android:textColor="@color/mauDen"
+                android:textSize="@dimen/text_title" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:id="@+id/editTenBang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bảng mới"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Quyền xem"
+                android:textColor="@color/mauDen"
+                android:textSize="@dimen/text_title" />
+
             <Spinner
-                android:layout_marginLeft="50dp"
                 android:id="@+id/spinnertb"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></Spinner>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"></Spinner>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="Phông nền"/>
+                android:layout_gravity="center"
+                android:text="Phông nền"
+                android:textColor="@color/mauDen"
+                android:textSize="@dimen/text_title" />
+
             <ImageView
                 android:id="@+id/laymau"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="200dp"
-                android:layout_width="20dp"
-                android:layout_height="30dp"
-                android:background="@color/mauChuDao"
-                />
+                android:background="@color/mauChuDao" />
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </RelativeLayout>
