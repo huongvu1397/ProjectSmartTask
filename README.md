@@ -1,6 +1,10 @@
 # ProjectSmartTask
 Đây là một ứng dụng quản lý công việc của bạn.
 
+## Installation
+
+File APK [download](https://actvneduvn-my.sharepoint.com/:u:/g/personal/at120826_actvn_edu_vn/EdkxYU0HiMhJtBNEclU-_RMB_ekMcJG-xGq8S2zqVCm8og?e=kjenWk).
+
 # Một số hình ảnh ứng dụng
 > Một số hình ảnh của ứng dụng khi cài đặt trên smartphone
 
