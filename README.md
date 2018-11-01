@@ -1,37 +1,12 @@
 # ProjectSmartTask
 Đây là một ứng dụng quản lý công việc của bạn.
 
-# Nombre de producto
-> Breve descripción de lo que hace tu producto.
+# Một số hình ảnh ứng dụng
+> Một số hình ảnh của ứng dụng khi cài đặt trên smartphone
 
-
-Uno o dos párrafos sobre tu producto y el problema que resuelve.
 
 ![In a single picture](https://raw.githubusercontent.com/shadmazumder/Xcode/master/InOnePicture.png)
  
-## Instalación
- 
-OS X y Linux:
- 
- ```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
- ```sh
-edit autoexec.bat
-```
-
-## Ejemplo de uso
-Algunos casos de ejemplo sobre cómo utilizar tu producto. Algunos bloques de código y capturas de pantalla harán que sea más atractivo.
-## Configuración de desarrollo
-Describe como instalar todas las dependencias y como ejecutar la batería de tests (en caso de tenerla). Si funciona en múltiples plataformas intenta describirlas todas si tuviesen pasos diferentes.
-```sh
-make install
-npm test
-```
-
 ## Historial de versiones
 
 * 0.2.1
